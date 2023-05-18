@@ -7,6 +7,6 @@ from app.api.aws_helpers import ALLOWED_EXTENSIONS, ALLOWED_IMAGES
 class VideoForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     artist = StringField('Artist', validators=[DataRequired()])
-    aws_url = FileField("Song File", validators=[FileRequired(), FileAllowed(list(ALLOWED_EXTENSIONS))])
-    video_image = FileField("Song Image", validators=[FileRequired(), FileAllowed(list(ALLOWED_IMAGES))])
+    aws_url = FileField("Video File", validators=[FileRequired(), FileAllowed(list(ALLOWED_EXTENSIONS))])
+    video_image = FileField("Video Image", validators=[FileRequired(), FileAllowed(list(ALLOWED_IMAGES))])
     uploader_id = IntegerField('Uploader Id', validators=[DataRequired()])

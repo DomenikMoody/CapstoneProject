@@ -3,6 +3,6 @@ from wtforms import StringField, IntegerField
 from wtforms.validators import DataRequired
 
 
-class AddSongToPlaylistForm(FlaskForm):
+class AddVideoToPlaylistForm(FlaskForm):
      playlist_ids = StringField("Playlist ids", validators=[DataRequired()])
-     song_id = IntegerField("Song Id", validators=[DataRequired()])
+     video_id = IntegerField("Video Id", validators=[DataRequired()])

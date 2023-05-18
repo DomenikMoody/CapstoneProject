@@ -1,6 +1,6 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from .PlaylistVideos import playlist_videos
-from .vidoes import Song
+from .videos import Video
 
 class Playlist(db.Model):
     __tablename__ = 'playlists'
@@ -14,7 +14,7 @@ class Playlist(db.Model):
     playlist_image = db.Column(db.String(255), nullable=False)
 
     playlist_videos = db.relationship(
-        "video",
+        "Video",
         secondary=playlist_videos,
         back_populates='video_playlists'
     )
@@ -31,5 +31,5 @@ class Playlist(db.Model):
             'creator': self.user.username,
             'name': self.name,
             'playlistImage': self.playlist_image,
-            'songs': [video.to_dict() for video in self.playlist_videos]
+            'video': [video.to_dict() for video in self.playlist_videos]
         }

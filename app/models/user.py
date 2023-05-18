@@ -25,16 +25,20 @@ class User(db.Model, UserMixin):
     )
 
     videos = db.relationship(
-        "Videos",
+        "Video",
         back_populates="uploader",
         cascade='delete-orphan, all'
     )
 
     user_likes = db.relationship(
-        "Videos",
+        "Video",
         secondary=likes,
         overlaps="videos",
-        back_populates="videos_likes"
+        back_populates="video_likes"
+    )
+    comments = db.relationship(
+        "Comment",
+        back_populates = "user"
     )
 
 

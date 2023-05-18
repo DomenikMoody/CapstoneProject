@@ -34,6 +34,10 @@ class Video(db.Model):
         overlaps="videos,uploader",
         back_populates="user_likes"
     )
+    comments = db.relationship(
+        "Comment",
+        back_populates="video"
+    )
 
     def to_dict(self):
         return {
