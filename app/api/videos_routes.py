@@ -33,16 +33,13 @@ def create_video_by_id():
         videoPicture.filename = get_unique_filename(videoPicture.filename)
         uploadpic = upload_file_to_s3(videoPicture)
         if "url" not in upload:
-            # if the dictionary doesn't have a url key
-            # it means that there was an error when we tried to upload
-            # so we send back that error message
             return upload["errors"]
         if "url" not in uploadpic:
             return upload["errors"]
         video_pic = uploadpic["url"]
         aws_url = upload["url"]
 
-        new_song = Video(
+        new_video = Video(
             title = form.data['title'],
             artist = form.data['artist'],
             aws_url = aws_url,
@@ -50,9 +47,9 @@ def create_video_by_id():
             uploader_id = form.data['uploader_id']
         )
 
-        db.session.add(new_song)
+        db.session.add(new_video)
         db.session.commit()
-        return jsonify(new_song.to_dict())
+        return jsonify(new_video.to_dict())
     else:
         return jsonify({"error":"Bad Data"})
 
@@ -73,7 +70,7 @@ def edit_video_by_id(id):
 
 @video_routes.route('/<int:id>', methods=['DELETE'])
 @login_required
-def delete_song_by_id(id):
+def delete_video_by_id(id):
     """Delete video from db as well as from
     AWS bucket IF it is not a seeded video"""
 
@@ -83,12 +80,12 @@ def delete_song_by_id(id):
 
 
     return jsonify({
-        'message': 'Song deleted'
+        'message': 'video deleted'
     })
 
 @video_routes.route('/<int:id>/likes/users/<int:userId>',methods=["POST"])
 @login_required
-def like_song_by_id(id, userId):
+def like_video_by_id(id, userId):
     video = Video.query.get(id)
     user = User.query.get(userId)
     video.video_likes.append(user)
@@ -101,7 +98,7 @@ def like_song_by_id(id, userId):
 
 @video_routes.route('/<int:id>/likes/users/<int:userId>',methods=["DELETE"])
 @login_required
-def unlike_song_by_id(id, userId):
+def unlike_video_by_id(id, userId):
     video = Video.query.get(id)
     user = User.query.get(userId)
     video.video_likes = [user for user in video.video_likes if user.id != userId]

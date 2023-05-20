@@ -1,3 +1,10 @@
 .videoCardManage{
     display: flex;
 }
+.playlistthumbnail{
+    height: 100px;
+    width: 100px;
+}
+.playlistCard{
+    display: flex;
+}

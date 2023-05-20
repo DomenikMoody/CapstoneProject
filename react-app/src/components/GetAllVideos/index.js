@@ -22,17 +22,15 @@ function GetAllVideos() {
                         <div className='videoThumbNail'>
                             <img src={video?.videoImage}></img>
                         </div>
-                        {video?.title}
-                        <div>
-                            <NavLink to={`/user/}`}>
-                                <p>Uploaded by:{video?.uploader}</p>
-                            </NavLink>
-
+                        <div className='videoTitle'>
+                           {video?.title}
+                        </div>
+                        <div className='videoStudio'>
+                            Studio: {video?.artist}
                         </div>
                     </div>
                 </NavLink>
             )}
-
         </div>
     )
 }

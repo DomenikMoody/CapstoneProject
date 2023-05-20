@@ -1,24 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
+import Sidebar from '../Sidebar';
 import './Navigation.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 
-function Navigation({ isLoaded }){
-	const sessionUser = useSelector(state => state.session.user);
 
-	return (
-		<ul>
-			<li>
-				<NavLink exact to="/">Home</NavLink>
-			</li>
-			{isLoaded && (
-				<li>
-					<ProfileButton user={sessionUser} />
-				</li>
-			)}
-		</ul>
-	);
+function Navigation({ isLoaded }) {
+  const sessionUser = useSelector(state => state.session.user);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const handleSidebarToggle = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+
+  const handleSidebarClose = () => {
+    setIsSidebarOpen(false);
+  };
+
+  return (
+    <div className="navbar">
+      <div className="LogoDiv">
+        <button className="MenuButton " onClick={handleSidebarToggle}>
+          <FontAwesomeIcon icon={faBars} />
+        </button>
+        <NavLink exact to="/" className="LogoLink">
+          <img className="Logo" src="http://otakuxpress.s3.amazonaws.com/c20bde2d7f2b45f99a0a736cc49d325d.png" alt="Logo" />
+          <span className="logoText">otakuxpress</span>
+        </NavLink>
+      </div>
+      {isLoaded && (
+        <div>
+          <ProfileButton user={sessionUser} />
+        </div>
+      )}
+      <Sidebar isOpen={isSidebarOpen} onClose={handleSidebarClose} />
+    </div>
+  );
 }
 
 export default Navigation;
