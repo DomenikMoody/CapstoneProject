@@ -1,1 +1,11 @@
 /* TODO Add site wide styles */
+body {
+    background-color: #1a1918;
+    color: #FFFFFF;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: large;
+    margin:0 20px;
+}
+html{
+    margin: 0;
+}

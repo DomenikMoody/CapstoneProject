@@ -50,10 +50,10 @@ def upload_file_to_s3(file, acl="public-read"):
 
 
 
-def remove_file_from_s3(song_url):
+def remove_file_from_s3(video_url):
     # AWS needs the image file name, not the URL,
     # so we split that out of the URL
-    key = song_url.rsplit("/", 1)[1]
+    key = video_url.rsplit("/", 1)[1]
     try:
         s3.delete_object(
         Bucket=BUCKET_NAME,

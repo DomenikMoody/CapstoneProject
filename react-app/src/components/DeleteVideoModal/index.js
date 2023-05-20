@@ -15,7 +15,7 @@ function DeleteModal({video}) {
     return (
         <>
         <h3>{`ARE YOU SURE YOU WANT TO REMOVE ${video?.title}?`}</h3>
-            <button className="modalbtn" onClick={handleDelete}>Delete Song</button>
+            <button className="modalbtn" onClick={handleDelete}>Delete Video</button>
             <button className="modalbtn" onClick={() => closeModal()}>Cancel</button>
         </>
     )

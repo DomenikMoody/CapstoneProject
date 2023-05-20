@@ -63,5 +63,5 @@ class User(db.Model, UserMixin):
             'bio': self.bio,
             'profileImage': self.profile_image,
             'playlists': [playlist.to_dict() for playlist in self.playlists],
-            'likes': [song.id for song in self.user_likes]
+            'likes': [video.id for video in self.user_likes]
         }

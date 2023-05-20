@@ -7,6 +7,9 @@ import GetAllVideos from "./components/GetAllVideos";
 import ManageProfile from "./components/ManageProfile";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
+import SingleVideoPage from "./components/SingleVideoPage";
+import GetAllPlaylist from "./components/GetAllPlaylist";
+import PlaylistForm from "./components/CreatePlaylistForm";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,6 +34,15 @@ function App() {
           </Route>
           <Route exact path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route exact path="/video/:videoid">
+            <SingleVideoPage />
+          </Route>
+          <Route exact path="/playlist/all">
+            <GetAllPlaylist />
+          </Route>
+          <Route exact path="/playlist/new">
+            <PlaylistForm />
           </Route>
         </Switch>
       )}

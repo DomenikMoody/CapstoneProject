@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import { getAllVideosThunk } from '../../store/videos'
 import { createVideoThunk } from '../../store/videos'
 import './CreateVideoForm.css'
+import { useModal } from '../../context/Modal'
 
 function CreateVideoForm() {
     const currentUser = useSelector(state => state.session.user);
@@ -13,11 +14,12 @@ function CreateVideoForm() {
     const dispatch = useDispatch()
     const [title, setTitle] = useState('');
     const [artist, setArtist] = useState('');
-    const [currSongLength, setCurrSongLength] = useState(videoLength)
+    const [currVideoLength, setCurrVideoLength] = useState(videoLength)
     const [file, setFile] = useState(null)
     const [imgFile, setImageFile] = useState(null)
     const [error, setError] = useState(null)
     const [isUploading, setIsUploading] = useState(false)
+    const { closeModal } = useModal()
 
 
     useEffect(() => {
@@ -51,7 +53,7 @@ function CreateVideoForm() {
 
         setIsUploading(true)
 
-        setCurrSongLength(+videoLength)
+        setCurrVideoLength(+videoLength)
         const formData = new FormData()
         formData.append("title", title)
         formData.append("artist", artist)
@@ -62,7 +64,8 @@ function CreateVideoForm() {
 
         setTimeout(() => setIsUploading(false), 3000)
 
-        history.push('/')
+        history.push(`/manage/${currentUser.id}`)
+        closeModal()
     }
 
     return (
@@ -74,7 +77,7 @@ function CreateVideoForm() {
                     </div>}
                 <div>
                     <label>
-                        <input id="video-upload" type="file" name="video" accept="video/*" onChange={handleFileUpload} className='SongUploadbtn' />
+                        <input id="video-upload" type="file" name="video" accept="video/*" onChange={handleFileUpload} className='VideoUploadbtn' />
                         <label htmlFor="video-upload" className="uploadbutton">
                             <i className="fas fa-cloud-upload-alt"></i>
                             {file ? "Video Ready to Upload" : "Upload Video"}
