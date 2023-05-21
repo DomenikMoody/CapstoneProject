@@ -51,7 +51,7 @@ const PlaylistForm = () => {
 
         const formData = new FormData()
 
-        formData.append('user_id', user.id)
+        formData.append('user_id', user?.id)
         formData.append('name', name)
         formData.append('playlist_image', imgFile)
         formData.append('playlist_videos', checked.join(','))
@@ -103,7 +103,7 @@ const PlaylistForm = () => {
                             Name
                             <input
                                 id="playlistName"
-                                placeholder={`My Playlist #${(user.playlists).length + 1}`}
+                                placeholder={`My Playlist`}
                                 type="text"
                                 value={name}
                                 onChange={(e) => setName(e.target.value)} />
