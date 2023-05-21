@@ -1,0 +1,17 @@
+.singleVideoPageContainer{
+    margin-top: 100px;
+}
+.videoInfo{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.videoArtist{
+    font-size: 14px;
+}
+.videoBioTitle{
+    margin-top: 10px;
+}
+.videoBio{
+    font-size: 14px;
+}

@@ -10,3 +10,5 @@ class VideoForm(FlaskForm):
     aws_url = FileField("Video File", validators=[FileRequired(), FileAllowed(list(ALLOWED_EXTENSIONS))])
     video_image = FileField("Video Image", validators=[FileRequired(), FileAllowed(list(ALLOWED_IMAGES))])
     uploader_id = IntegerField('Uploader Id', validators=[DataRequired()])
+    about_video = StringField("About Video", validators=[DataRequired()])
+    genre = StringField("Genre", validators=[DataRequired()])

@@ -15,6 +15,8 @@ class Video(db.Model):
     aws_url = db.Column(db.String(255))
     uploader_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')))
     video_image = db.Column(db.String(255), nullable=False)
+    about_video = db.Column(db.String(255), nullable=False)
+    genre = db.Column(db.String(255), nullable=False)
 
     video_playlists = db.relationship(
         "Playlist",
@@ -46,5 +48,7 @@ class Video(db.Model):
             'artist' : self.artist,
             'awsUrl' : self.aws_url,
             'uploader': self.uploader.username,
-            'videoImage': self.video_image
+            'videoImage': self.video_image,
+            'aboutVideo': self.about_video,
+            'genre': self.genre
         }
