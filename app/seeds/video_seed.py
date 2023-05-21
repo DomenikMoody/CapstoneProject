@@ -160,7 +160,7 @@ def seed_videos(seeded_users):
         uploader = seeded_users[0],
         video_likes = sample(seeded_users, randint(0, len(seeded_users))),
         video_image ="http://otakuxpress.s3.amazonaws.com/1ffe126deea744dd9145402e02f63589.jpg",
-        about_video = "Argo sent to rescue Arisa for peace treaty. Shu's ruthless rule shocks Argo. Students accept Shu's leadership. Argo escapes, confronts Shu. Shu learns about Voids and their consequences. Arisa's warning stopped by Inori. Ming Hua Group cancels help. Gai resurrected by Keido and Haruka.",
+        about_video = "Argo rescues Arisa, confronts ruthless Shu, reveals Voids' consequences. Ming Hua Group cancels aid. Gai resurrected.",
         genre = "Action fiction"
     )
     video17 = Video(
