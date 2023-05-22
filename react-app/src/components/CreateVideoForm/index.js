@@ -17,6 +17,8 @@ function CreateVideoForm() {
     const [currVideoLength, setCurrVideoLength] = useState(videoLength)
     const [file, setFile] = useState(null)
     const [imgFile, setImageFile] = useState(null)
+    const [aboutVideo, setAboutVideo] = useState('');
+    const [genre, setGenre] = useState('');
     const [error, setError] = useState(null)
     const [isUploading, setIsUploading] = useState(false)
     const { closeModal } = useModal()
@@ -60,6 +62,8 @@ function CreateVideoForm() {
         formData.append("aws_url", file)
         formData.append("uploader_id", currentUser.id)
         formData.append('video_image', imgFile)
+        formData.append('about_video', aboutVideo)
+        formData.append('genre', genre)
         await dispatch(createVideoThunk(formData))
 
         setTimeout(() => setIsUploading(false), 3000)
@@ -103,8 +107,16 @@ function CreateVideoForm() {
                     <input id="video-title" type="text" value={title} placeholder='Video Title' onChange={(e) => setTitle(e.target.value)} />
                 </label>
                 <label>
-                    <div>Artist</div>
-                    <input id="artist-name" type="text" value={artist} placeholder='Artist Time' onChange={(e) => setArtist(e.target.value)} />
+                    <div>Studio</div>
+                    <input id="Studio-name" type="text" value={artist} placeholder='Studio Name' onChange={(e) => setArtist(e.target.value)} />
+                </label>
+                <label>
+                    <div>About Video</div>
+                    <input id="about-video" type="text" value={aboutVideo} placeholder='About Video' onChange={(e) => setAboutVideo(e.target.value)} />
+                </label>
+                <label>
+                    <div>Genre</div>
+                    <input id="Genre" type="text" value={genre} placeholder='Genre' onChange={(e) => setGenre(e.target.value)} />
                 </label>
                 <div className='SubmitVideoBtn'>
                     <button disabled={isUploading} className="create-video-button" type="submit">{isUploading ? "Uploading video..." : "Submit video"}</button>

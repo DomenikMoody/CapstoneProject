@@ -1,0 +1,24 @@
+.PlaylistContainer{
+    margin-top: 100px;
+}
+.playlistImage{
+    display: flex;
+    justify-content: center;
+}
+.singleplaylistImg{
+    width: 60%;
+    height: auto;
+}
+.imageTable{
+    width: 30%;
+}
+td {
+    text-align: center;
+  }
+.allVideoContainerHeaders {
+    width: 100%;
+  }
+  .allVideoContainerHeaders tbody tr:hover {
+    background-color: #DE9E48;
+    cursor: pointer;
+  }

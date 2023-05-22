@@ -2,13 +2,14 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import { getAllPlaylistThunk } from "../../store/playlist";
 import { useHistory } from "react-router-dom";
+import "./GetAllPlaylist.css"
 
 function GetAllPlaylist() {
     const dispatch = useDispatch()
     const history = useHistory()
     const allPlaylistsObj = useSelector(state => state.playlist.allPlaylists)
     const allPlaylists = Object.values(allPlaylistsObj)
-    console.log(allPlaylistsObj, "HERE IS THE PLAYLIST OBJ")
+
 
     useEffect(() => {
         dispatch(getAllPlaylistThunk())

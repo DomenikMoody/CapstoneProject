@@ -1,0 +1,23 @@
+.wholepageplaylist{
+    margin-top: 100px;
+}
+.playlistImg{
+    width: 350px;
+}
+.playlistCardContainer{
+    display: flex;
+    flex-direction: column;
+}
+#playlistName{
+    margin: 2px;
+    color: #DE9E48;
+}
+#playlistuserName{
+    margin: 2px;
+    font-size: 12px;
+}
+.containerforHomePage{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}

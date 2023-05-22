@@ -44,7 +44,9 @@ def create_video_by_id():
             artist = form.data['artist'],
             aws_url = aws_url,
             video_image = video_pic,
-            uploader_id = form.data['uploader_id']
+            uploader_id = form.data['uploader_id'],
+            about_video = form.data['about_video'],
+            genre = form.data['genre']
         )
 
         db.session.add(new_video)

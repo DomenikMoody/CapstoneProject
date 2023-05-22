@@ -26,7 +26,7 @@ function SingleVideoPage() {
           <source src={pageVideo?.awsUrl} type="video/mp4" />
         </video>
         <div className="videoInfo">
-          <div className="videoTitle">{pageVideo?.title}</div>
+          <div className="videoTitlesingle">{pageVideo?.title}</div>
           <div className="videoArtist">Made By: {pageVideo?.artist}</div>
           <div className="videoBioTitle">Description</div>
           <div className="videoBio">{pageVideo?.aboutVideo}</div>

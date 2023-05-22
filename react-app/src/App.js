@@ -9,7 +9,9 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import SingleVideoPage from "./components/SingleVideoPage";
 import GetAllPlaylist from "./components/GetAllPlaylist";
+import GetSinglePlaylist from "./components/GetSinglePlaylist";
 import PlaylistForm from "./components/CreatePlaylistForm";
+import ProtectedRoute from "./components/auth/ProtectedRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,8 +25,10 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          <Route exact path="/manage/:userid">
-            <ManageProfile />
+          <Route exact path="/manage/">
+            <ProtectedRoute>
+              <ManageProfile />
+            </ProtectedRoute>
           </Route>
           <Route exact path="/" >
             <GetAllVideos />
@@ -42,7 +46,13 @@ function App() {
             <GetAllPlaylist />
           </Route>
           <Route exact path="/playlist/new">
-            <PlaylistForm />
+            <ProtectedRoute>
+              <PlaylistForm />
+            </ProtectedRoute>
+          
+          </Route>
+          <Route exact path="/playlist/:playlistid">
+            <GetSinglePlaylist />
           </Route>
         </Switch>
       )}

@@ -52,6 +52,7 @@ export const removeVideoThunk = (videoId) => async (dispatch) => {
     }
 }
 export const createVideoThunk = (video) => async (dispatch) => {
+    console.log("HERE IS THE VIDEO", video)
     const response = await fetch('/videos/new', {
         method: 'POST',
         body: video,

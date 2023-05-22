@@ -47,10 +47,10 @@ export const deletePlaylistThunk = (playlistId) => async (dispatch) => {
 }
 export const getOnePlaylistThunk = (id) => async dispatch => {
 
-    const res = await fetch (`/playlists/${id}`)
+    const res = await fetch (`/playlists/${Number(id)}`)
 
     if (res.ok) {
-
+        
         const data = await res.json()
 
         dispatch(GetOnePlaylistAction(data))

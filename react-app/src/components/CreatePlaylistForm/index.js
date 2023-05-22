@@ -5,6 +5,7 @@ import { getAllVideosThunk } from "../../store/videos"
 import { useHistory } from "react-router-dom"
 import "./CreatePlaylistForm.css"
 
+
 const PlaylistForm = () => {
     const user = useSelector(state => state.session.user)
     const allVideos = useSelector(state => state.video)
@@ -85,14 +86,14 @@ const PlaylistForm = () => {
                         {error}
                     </div>}
                 <div className="topOfPage">
-                    <div className="playlistImage">
-                        <input id="playlistImages"
+                    <div className="playlistImageform">
+                        <input id="playlistImagesform"
                             type="file"
                             name="playlistPicture"
                             accept="image/*"
                             onChange={handleAddImage}
                             className="playlistImageBtn" />
-                        <label htmlFor="playlistImages" className="upload-button">
+                        <label htmlFor="playlistImagesform" className="upload-button">
                             <i className="fas fa-cloud-upload-alt"></i>
                             {imgFile ? "Picture Ready to Upload" : "Upload Photo"}
                         </label>
@@ -100,21 +101,34 @@ const PlaylistForm = () => {
                     </div>
                     <div className="playlistnameDiv">
                         <label>
-                            Name
-                            <input
-                                id="playlistName"
-                                placeholder={`My Playlist`}
-                                type="text"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)} />
+                            Name Your Playlist
+                            <div>
+
+                                <input
+                                    id="playlistName"
+                                    placeholder={`My Playlist`}
+                                    type="text"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)} />
+                            </div>
                         </label>
                     </div>
                 </div>
-                <div>
+                <div className="allvideosContainer">
                     {allVideosArray.map(video =>
                         <div className="allvideos">
                             <label>
-                                {video?.title}
+                                <div className='VideoCard'>
+                                    <div className='videoThumbNail'>
+                                        <img src={video?.videoImage}></img>
+                                    </div>
+                                    <div className='videoTitle'>
+                                        {video?.title}
+                                    </div>
+                                    <div className='videoStudio'>
+                                        Studio: {video?.artist}
+                                    </div>
+                                </div>
                                 <input
                                     type="checkbox"
                                     name='video'
@@ -125,7 +139,7 @@ const PlaylistForm = () => {
                         </div>)}
                 </div>
                 <div className='SubmitPlaylistBtn'>
-                    <button isabled={isUploading} className="create-playlist-button" type="submit">{isUploading ? "Creating playlist...": "Create Playlist" }</button>
+                    <button isabled={isUploading} className="create-playlist-button" type="submit">{isUploading ? "Creating playlist..." : "Create Playlist"}</button>
                 </div>
             </form>
         </div>

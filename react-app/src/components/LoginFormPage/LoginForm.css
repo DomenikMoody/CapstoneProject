@@ -1,0 +1,14 @@
+.loginPageDiv{
+margin-top: 100px;
+display: flex;
+}
+.loginpagepic1{
+    width: 700px;
+}
+.logininfostuff{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+}

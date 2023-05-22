@@ -1,3 +1,13 @@
 .Entirepage{
     margin-top: 100px;
 }
+.allvideos{
+    width: fit-content;
+}
+.allvideosContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+#playlistImagesform{
+    display: none;
+}

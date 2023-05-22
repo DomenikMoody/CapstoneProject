@@ -35,7 +35,7 @@ function Sidebar({ isOpen, onClose }) {
           </NavLink>
         </div>
         <div>
-          <NavLink to={`/manage/${user?.id}`} activeClassName="active">
+          <NavLink to={`/manage/`} activeClassName="active">
             My Profile
           </NavLink>
         </div>
