@@ -49,7 +49,6 @@ function App() {
             <ProtectedRoute>
               <PlaylistForm />
             </ProtectedRoute>
-          
           </Route>
           <Route exact path="/playlist/:playlistid">
             <GetSinglePlaylist />

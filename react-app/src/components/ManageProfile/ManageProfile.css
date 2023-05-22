@@ -5,10 +5,13 @@
 
 .playlistthumbnail {
     width: 350px;
+    height: 196px;
 }
 
 .playlistCard {
     display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .ManageVideoLinks {

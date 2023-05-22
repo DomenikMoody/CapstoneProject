@@ -26,27 +26,31 @@ function Sidebar({ isOpen, onClose }) {
 
   const ulClassName = `Sidebar ${isOpen ? 'active' : ''}`;
 
+  const handleLinkClick = () => {
+    onClose();
+  };
+
   return (
     <div className={ulClassName} ref={ulRef}>
       <div className="SidebarContent">
         <div>
-          <NavLink exact to="/" activeClassName="active">
+          <NavLink exact to="/" onClick={handleLinkClick}>
             Home
           </NavLink>
         </div>
         <div>
-          <NavLink to={`/manage/`} activeClassName="active">
-            My Profile
-          </NavLink>
-        </div>
-        <div>
-          <NavLink to="/playlist/all" activeClassName="active">
+          <NavLink to="/playlist/all" onClick={handleLinkClick}>
             All Playlist
           </NavLink>
         </div>
         <div>
-          <NavLink to="/playlist/new" activeClassName="active">
+          <NavLink to="/playlist/new" onClick={handleLinkClick}>
             Create Playlist
+          </NavLink>
+        </div>
+        <div>
+          <NavLink to="/manage/" onClick={handleLinkClick}>
+            My Profile
           </NavLink>
         </div>
       </div>
