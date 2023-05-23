@@ -11,3 +11,25 @@
 #playlistImagesform{
     display: none;
 }
+.create-playlist-button {
+    background-color: #DE9E48;
+    color:  #1a1918;
+    border: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+.createyourplaylist{
+    color:#DE9E48;
+    margin-bottom: 0;
+}
+.wordsforplaylist{
+    font-size: 12px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.upload-button:hover{
+    color:#DE9E48;
+}

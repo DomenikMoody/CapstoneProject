@@ -1,0 +1,12 @@
+.SignUpmodal{
+    color: #DE9E48
+}
+.signUpbtn >*{
+    background-color: #DE9E48;
+    color:white;
+    border: none;
+}
+.signUpbtn >*:hover{
+    background-color: #1a1918;
+    color: #DE9E48;
+}

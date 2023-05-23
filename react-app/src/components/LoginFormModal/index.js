@@ -17,40 +17,67 @@ function LoginFormModal() {
     if (data) {
       setErrors(data);
     } else {
-        closeModal()
+      closeModal()
     }
   };
-
+  const handleOnClick = async () => {
+    const email = "demoo@aa.io";
+    const password = "password";
+    const data = await dispatch(login(email, password));
+  };
   return (
-    <>
-      <h1>Log In</h1>
+    <div className="LoginModalDiv">
+      <div className="LoginModalTitle">
+        <h1 className="loginText">Log In</h1>
+        <p className="demotext">Or use the Demo User button for quick access</p>
+      </div>
       <form onSubmit={handleSubmit}>
-        <ul>
+        <div>
           {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
+            <li className="error" key={idx}>{error}</li>
           ))}
-        </ul>
+        </div>
+        <div>
+          <label>
+            <div>
+              Email
+            </div>
+            <div>
+              <input
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
+
+          </label>
+        </div>
+
         <label>
-          Email
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+          <div className="passWordText">
+            Password
+          </div>
+          <div>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
+
         </label>
-        <label>
-          Password
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </label>
-        <button type="submit">Log In</button>
+        <div className="DemoandLogin">
+          <div>
+          <button className="loginbtnmodal" type="submit">Log In</button>
+        </div>
+        <div className="DemoUserBtn">
+            <button className="demobtnModal" onClick={handleOnClick}>Demo User</button>
+        </div>
+        </div>
       </form>
-    </>
+    </div>
   );
 }
 

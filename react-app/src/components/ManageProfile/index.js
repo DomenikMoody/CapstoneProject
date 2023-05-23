@@ -91,7 +91,7 @@ function ManageProfile() {
             userPlaylist.map(playlist => (
               <div key={playlist.id}>
                 <div className='playlistthumbnail'>
-                  <img className='playlistthumbnail' src={playlist.playlistImage} alt="Playlist Thumbnail" />
+                  <img className='playlistthumbnailimage' src={playlist.playlistImage} alt="Playlist Thumbnail" />
                 </div>
                 <div>
                   {playlist.name}

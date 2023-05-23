@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux"
 import {useModal} from '../../context/Modal'
 import { deletePlaylistThunk } from "../../store/playlist"
+import "./DeletePlaylist.css"
 
 function DeletePlaylist(playlist){
     const dispatch = useDispatch()
     const { closeModal } = useModal()
 
-    console.log(playlist, "HERE IS THE PLAYLIST")
     const handleDelete = async (e) => {
         e.preventDefault()
         await dispatch(deletePlaylistThunk(playlist.playlist.id))
@@ -15,11 +15,11 @@ function DeletePlaylist(playlist){
 
     return (
         <div>
-            <div>
+            <div className="DeleteText">
                 <h2>Are you sure you want to delete {playlist.playlist.name}</h2>
             </div>
             <div>
-                <button onClick={handleDelete}>Delete playlist</button>
+                <button className="DeletePlaylistbtnmodal" onClick={handleDelete}>Delete playlist</button>
             </div>
         </div>
 

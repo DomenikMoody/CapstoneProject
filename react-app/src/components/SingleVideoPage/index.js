@@ -37,7 +37,7 @@ function SingleVideoPage() {
           <div className="videoBio">{pageVideo?.aboutVideo}</div>
         </div>
       </div>
-      <div className="CommentsContainer">
+      {/* <div className="CommentsContainer">
       <form className='createCommentForm'>
                 <div>
 
@@ -49,7 +49,7 @@ function SingleVideoPage() {
                     </label>
                 </div>
                 </form>
-      </div>
+      </div> */}
     </div>
   );
 }

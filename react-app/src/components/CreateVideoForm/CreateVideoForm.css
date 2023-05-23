@@ -1,0 +1,42 @@
+.wholepage{
+    background-color: #1a1918;
+    border-radius: 20px;
+    padding: 20px;
+    width: 500px;
+    height: 475px;
+}
+#video-upload{
+    display: none;
+}
+#videoImages {
+    display: none;
+  }
+.warningupload{
+    margin-top: 0px;
+    font-size: 12px;
+}
+.uploadHeader{
+    margin-top: 0px ;
+    margin-bottom: 0px;
+    color: #DE9E48
+}
+.uploadbutton:hover{
+    color: #DE9E48
+}
+.createvideoform{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.error{
+    color: red
+}
+.create-video-button{
+    background-color: #DE9E48;
+    color: black;
+    border: none;
+}
+.create-video-button:hover{
+    background-color: #1a1918;
+    color: #DE9E48;
+}

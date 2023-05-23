@@ -16,7 +16,6 @@ const PlaylistForm = () => {
     const [imgFile, setImageFile] = useState(null)
     const [error, setError] = useState(null)
     const [isUploading, setIsUploading] = useState(false)
-
     const allVideosArray = Object.values(allVideos)
 
 
@@ -80,6 +79,8 @@ const PlaylistForm = () => {
 
     return (
         <div className="Entirepage">
+            <div><h1 className="createyourplaylist">CREATE YOUR PLAYLIST</h1></div>
+            <div><p className="wordsforplaylist">You must select at least one video with creation of your playlist</p></div>
             <form className="createplaylistformdiv" onSubmit={handleSubmit}>
                 {error &&
                     <div className="error">

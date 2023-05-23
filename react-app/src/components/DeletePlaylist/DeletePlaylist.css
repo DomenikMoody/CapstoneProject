@@ -1,0 +1,9 @@
+.DeletePlaylistbtnmodal{
+    background-color:#DE9E48 ;
+    border: none;
+}
+.DeletePlaylistbtnmodal:hover{
+    background-color:#1a1918;
+    color: #DE9E48;
+    border: none;
+}

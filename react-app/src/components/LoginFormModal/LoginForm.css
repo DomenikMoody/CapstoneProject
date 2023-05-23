@@ -1,3 +1,47 @@
 #modal-content{
+display: flex;
+justify-content: center;
+align-items: center;
 border-radius: 20px;
+background-color: #1a1918;
+width: 350px;
+height: 325px;
+}
+.loginbtnmodal{
+    background-color: #DE9E48;
+    border: none;
+}
+.DemoandLogin{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.LoginModalDiv{
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
+.LoginModalTitle{
+    color: #DE9E48;
+}
+.loginbtnmodal:hover{
+   background-color: #1a1918;
+   color:#DE9E48
+}
+.demobtnModal{
+    background-color: #DE9E48;
+    border: none;
+}
+.demobtnModal:hover{
+    background-color: #1a1918;
+    color:#DE9E48
+}
+.demotext{
+    font-size: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: white;
+}
+.loginText{
+    margin-bottom: 0;
 }

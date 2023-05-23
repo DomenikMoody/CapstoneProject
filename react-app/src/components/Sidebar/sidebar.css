@@ -4,25 +4,101 @@
   left: 0;
   height: 100%;
   width: 250px;
-  background-color: #fff;
-  z-index: 9999; /* Higher z-index value */
+  background-color: #1a1918;
+  z-index: 9999;
   transition: transform 0.3s ease-in-out;
+  border-right: white 1px solid;
 }
 
-  .Sidebar.active {
-    transform: translateX(0);
-  }
+.Sidebar.active {
+  transform: translateX(0);
+  background-color: #1a1918;
+}
 
-  .SidebarContent {
-    padding: 20px;
-  }
 
-  .CloseButton {
-    display: block;
-    margin-bottom: 20px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
 
-  /* Add any additional styles as needed */
+.LogoTitleSidebar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #DE9E48;
+  padding: 25px;
+  border-bottom: 1px solid white;
+}
+
+.LogoLinkSideBar {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.Logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.logoTextSideBar {
+  color: white;
+}
+.HomeSideBar >*{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.HomeSideBar >*:hover{
+  color: black;
+  background-color: #DE9E48;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.AllPlaylistSideBar >*{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.AllPlaylistSideBar >*:hover{
+  color: black;
+  background-color: #DE9E48;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.NewPlaylistSidebar >*{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.NewPlaylistSidebar >*:hover{
+  color: black;
+  background-color: #DE9E48;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.myProfileSidebar >*{
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+.myProfileSidebar >*:hover{
+  color: black;
+  background-color: #DE9E48;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}

@@ -8,6 +8,12 @@
     height: 196px;
 }
 
+.playlistthumbnailimage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
 .playlistCard {
     display: flex;
     flex-wrap: wrap;
@@ -18,14 +24,14 @@
     text-decoration: none;
 }
 
-.UploadAVideo>* {
+.UploadAVideo > * {
     background-color: #DE9E48;
     border: none;
     border-radius: 20px;
     padding: 15px;
 }
 
-.UploadAVideo>*:hover {
+.UploadAVideo > *:hover {
     background-color: #1a1918;
     color: #DE9E48;
 }
@@ -36,27 +42,20 @@
     justify-content: space-between;
 }
 
-.deleteButton > *{
+.deleteButton > *,
+.editButton > * {
     background-color: transparent;
     border: none;
 }
-.editButton > *{
-    background-color: transparent;
-    border: none;
-}
-.PlaylistBtns{
+
+.PlaylistBtns {
     display: flex;
     justify-content: space-between;
 }
-.PlaylistBtns > *{
-    background-color: transparent;
-    border: none;
-}
-.DeletePlaylistbtn > *{
-    background-color: transparent;
-    border: none;
-}
-.UpdatePlaylistbtn > *{
+
+.PlaylistBtns > *,
+.DeletePlaylistbtn > *,
+.UpdatePlaylistbtn > * {
     background-color: transparent;
     border: none;
 }
