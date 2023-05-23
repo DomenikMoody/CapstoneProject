@@ -49,7 +49,7 @@ return(
                     name="playlistImage"
                     accept="image/*"
                     onChange={(e) => setImageFile(e.target.files[0])}
-                    className='SongPicupload' />
+                    className='Picupload' />
                     <label htmlFor="playlistImage" className="uploadbutton" id="inner-label-edit-playlist">
                         <i className="fas fa-cloud-upload-alt"></i>
                         {imageFile ? "Picture Ready to Upload" : "Upload Picture"}

@@ -23,7 +23,7 @@ function GetAllVideos() {
                             <img src={video?.videoImage}></img>
                         </div>
                         <div className='videoTitle'>
-                           {video?.title}
+                            {video?.title}
                         </div>
                         <div className='videoStudio'>
                             Studio: {video?.artist}

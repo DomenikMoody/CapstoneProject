@@ -1,0 +1,44 @@
+.editVideoModal{
+    padding: 20px;
+    height: 400px;
+}
+.editTitle{
+    color: #DE9E48;
+}
+.divforbuttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.Updatebutton{
+    background-color: #1a1918;
+    color: #DE9E48;
+    border: none;
+}
+.Updatebutton:hover{
+    background-color: #DE9E48;
+    color: #1a1918;;
+    border: none;
+}
+.CancelUpdateButton{
+    background-color: #1a1918;
+    color: #DE9E48;
+    border: none;
+}
+.CancelUpdateButton:hover{
+    background-color: #DE9E48;
+    color: #1a1918;;
+    border: none;
+}
+.modal-content{
+    height: 500px;
+    width: 500px;
+}
+.textareaAndCounter{
+    display: flex;
+}
+.character-counter{
+    position: absolute;
+    bottom: 120px;
+    right: 5px;
+}

@@ -12,3 +12,13 @@ display: flex;
     width: 100%;
     align-items: center;
 }
+.demouserloginPage{
+    background-color: #DE9E48;
+    color:#1a1918;
+    border: none;
+}
+.demouserloginPage:hover{
+    background-color: #DE9E48;
+    color: black;
+    border: none;
+}

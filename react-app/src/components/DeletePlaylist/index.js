@@ -14,7 +14,7 @@ function DeletePlaylist(playlist){
      }
 
     return (
-        <div>
+        <div className="DeletePlaylistModalstuff">
             <div className="DeleteText">
                 <h2>Are you sure you want to delete {playlist.playlist.name}</h2>
             </div>

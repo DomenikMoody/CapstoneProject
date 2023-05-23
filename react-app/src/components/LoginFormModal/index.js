@@ -21,10 +21,10 @@ function LoginFormModal() {
     }
   };
   const handleOnClick = async () => {
-    const email = "demoo@aa.io";
-    const password = "password";
+    setEmail("demo@aa.io")
+    setPassword("password")
     const data = await dispatch(login(email, password));
-  };
+    }
   return (
     <div className="LoginModalDiv">
       <div className="LoginModalTitle">
@@ -72,9 +72,9 @@ function LoginFormModal() {
           <div>
           <button className="loginbtnmodal" type="submit">Log In</button>
         </div>
+        </div>
         <div className="DemoUserBtn">
             <button className="demobtnModal" onClick={handleOnClick}>Demo User</button>
-        </div>
         </div>
       </form>
     </div>

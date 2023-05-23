@@ -1,23 +1,38 @@
-.wholepageplaylist{
+.wholepageplaylist {
     margin-top: 100px;
 }
-.playlistImg{
+
+.playlistImg {
     width: 350px;
+    max-height: 200px;
+    object-fit: cover;
 }
-.playlistCardContainer{
+
+.playlistCardContainer {
     display: flex;
     flex-direction: column;
 }
-#playlistName{
+
+#playlistName {
     margin: 2px;
     color: black;
 }
-#playlistuserName{
+
+#playlistuserName {
     margin: 2px;
     font-size: 12px;
 }
-.containerforHomePage{
+
+.containerforHomePage {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+}
+.playlistCardContainer:hover {
+    display: flex;
+    flex-direction: column;
+    background-color: #DE9E48;
+}
+.playlistCardContainer:hover #playlistName {
+    color: #000000;
 }

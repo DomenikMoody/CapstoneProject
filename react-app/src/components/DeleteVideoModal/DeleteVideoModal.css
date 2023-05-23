@@ -1,0 +1,23 @@
+.deleteandcancelBtn{
+    display: flex;
+    justify-content: space-between;
+}
+.deletevideoModal{
+    padding: 20px;
+}
+.Deletemessage{
+    margin-top: 0px;
+    color: #DE9E48;
+}
+.modalbtn{
+    background-color:#1a1918;
+    color:#DE9E48;
+    border: none;
+}
+.modalbtn:hover{
+    background-color:#DE9E48;
+    color: black;
+}
+.deletevideoModal{
+    padding: 20px;
+}

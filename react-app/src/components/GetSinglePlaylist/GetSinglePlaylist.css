@@ -22,3 +22,12 @@ td {
     background-color: #DE9E48;
     cursor: pointer;
   }
+  .removeFromplaylistbtn{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+.toremovebuttoncss >*{
+  border: none;
+  background-color: #1a1918;
+}

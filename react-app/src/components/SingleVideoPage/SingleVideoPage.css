@@ -19,3 +19,16 @@
     font-size: 30px;
     color: #DE9E48;
 }
+.studioAndplaylist{
+    display: flex;
+    justify-content: space-between;
+}
+.AddVideotoPlaylistModal >*{
+    background-color: #1a1918;
+    color: #DE9E48;
+    border: none;
+}
+.AddVideotoPlaylistModal >*:hover{
+    background-color:  #DE9E48;
+    color:#1a1918;
+}

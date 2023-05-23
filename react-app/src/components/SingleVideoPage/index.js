@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSoloVideoThunk } from "../../store/videos";
+import AddVideotoPlaylist from "../AddVideoToPlaylistModal";
+import { useModal } from '../../context/Modal'
+import OpenModalButton from "../OpenModalButton";
 import "./SingleVideoPage.css";
 
 function SingleVideoPage() {
@@ -9,6 +12,7 @@ function SingleVideoPage() {
   const videoId = params.videoid;
   const soloVideo = useSelector((state) => state.video);
   const dispatch = useDispatch();
+  const { closeModal } = useModal()
   const pageVideo = soloVideo[Number(videoId)];
   const [comments, setComments] = useState("")
 
@@ -32,7 +36,18 @@ function SingleVideoPage() {
         </video>
         <div className="videoInfo">
           <div className="videoTitlesingle">{pageVideo?.title}</div>
-          <div className="videoArtist">Made By: {pageVideo?.artist}</div>
+          <div className="studioAndplaylist">
+            <div className="videoArtist">Made By: {pageVideo?.artist}</div>
+            <div>
+              <div className="AddVideotoPlaylistModal">
+                <OpenModalButton
+                  buttonText="Add to a playlist"
+                  onItemClick={closeModal}
+                  modalComponent={<AddVideotoPlaylist video={pageVideo} />}
+                />
+              </div>
+            </div>
+          </div>
           <div className="videoBioTitle">Description</div>
           <div className="videoBio">{pageVideo?.aboutVideo}</div>
         </div>

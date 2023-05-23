@@ -1,6 +1,9 @@
 .SignUpmodal{
     color: #DE9E48
 }
+.signUpmodal{
+    padding: 20px;
+}
 .signUpbtn >*{
     background-color: #DE9E48;
     color:white;

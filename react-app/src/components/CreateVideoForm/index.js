@@ -66,6 +66,14 @@ function CreateVideoForm() {
       setError('About Video must be 250 characters or less');
       return;
     }
+    if (aboutVideo.length === 0) {
+      setError('About Video is required');
+      return;
+    }
+    if (!genre){
+      setError('genre is required');
+      return;
+    }
 
     setIsUploading(true);
 

@@ -22,7 +22,11 @@ function LoginFormPage() {
       setErrors(data);
     }
   };
-
+  const handleOnClick = async () => {
+    setEmail("demo@aa.io")
+    setPassword("password")
+    const data = await dispatch(login(email, password));
+    }
   return (
     <div className="loginPageDiv">
       <div className="loginPagePic">
@@ -33,11 +37,11 @@ function LoginFormPage() {
           <h1>Thats weird, Looks like you not logged in, Here you go</h1>
         </div>
         <form onSubmit={handleSubmit}>
-          <ul>
+          <div className="error">
             {errors.map((error, idx) => (
-              <li key={idx}>{error}</li>
+              <div key={idx}>{error}</div>
             ))}
-          </ul>
+          </div>
           <label>
             <div>
               Email
@@ -61,8 +65,11 @@ function LoginFormPage() {
             />
           </label>
           <div>
-            <button type="submit">Log In</button>
+            <button className="demouserloginPage" type="submit">Log In</button>
           </div>
+        <div>
+          <button className="demouserloginPage" onClick={handleOnClick}>Demo User</button>
+        </div>
         </form>
       </div>
     </div>

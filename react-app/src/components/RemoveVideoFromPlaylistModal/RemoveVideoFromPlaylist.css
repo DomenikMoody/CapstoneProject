@@ -1,0 +1,7 @@
+.modalbuttonsforremove{
+    display: flex;
+    justify-content: space-between;
+}
+.removemodalcontent{
+    padding: 20px;
+}

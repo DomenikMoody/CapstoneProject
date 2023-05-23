@@ -28,12 +28,12 @@ const CreatePlaylistAction = (playlist) => {
         payload: playlist
     }
 }
-const deleteVideoFromPlaylistAction = (playlistId, videoId) => {
-    return{
-        type: DELETE_VIDEO_FROM_PLAYLIST,
-        payload: {playlistId, videoId}
-    }
-}
+// const deleteVideoFromPlaylistAction = (playlistId, videoId) => {
+//     return{
+//         type: DELETE_VIDEO_FROM_PLAYLIST,
+//         payload: {playlistId, videoId}
+//     }
+// }
 export const deletePlaylistThunk = (playlistId) => async (dispatch) => {
     const res = await fetch(`/playlists/${playlistId}`, {
         method: 'DELETE',
@@ -50,7 +50,7 @@ export const getOnePlaylistThunk = (id) => async dispatch => {
     const res = await fetch (`/playlists/${Number(id)}`)
 
     if (res.ok) {
-        
+
         const data = await res.json()
 
         dispatch(GetOnePlaylistAction(data))
@@ -65,7 +65,7 @@ export const deleteVideoFromPlaylistThunk = (playlist_id, video_id) => async dis
 
     if (res.ok){
         const newRes = await res.json()
-        dispatch(deleteVideoFromPlaylistAction(playlist_id, video_id))
+        dispatch(getAllPlaylistThunk())
         return newRes
     } else {
         return false
@@ -142,16 +142,6 @@ const playlistReducer = (state = initialState, action) =>{
         case DELETE_PLAYLIST: {
             const newState = {...state, allPlaylists: {...state.allPlaylists}}
             delete newState.allPlaylists[action.payload]
-            return newState
-        }
-        case DELETE_VIDEO_FROM_PLAYLIST: {
-            const newState = {...state, singlePlaylist: {...state.singlePlaylist}}
-            for(let i = 0; i< newState.singlePlaylist.videos.length; i++){
-                let video = newState.singlePlaylist.videos[i]
-                if(video.id === action.payload.videoId){
-                    newState.singlePlaylist.videos.splice(i,1)
-                }
-            }
             return newState
         }
         default:

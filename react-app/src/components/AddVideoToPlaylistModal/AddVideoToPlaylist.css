@@ -1,0 +1,15 @@
+.add-to-playlist-modal{
+    padding: 20px;
+}
+.titleforAdd{
+    color: #DE9E48;
+}
+.SubmitAddtoPlaylist{
+    background-color: #1a1918;
+    color: #DE9E48;
+    border: none;
+}
+.SubmitAddtoPlaylist:hover{
+    background-color: #DE9E48;
+    color:#1a1918;
+}
