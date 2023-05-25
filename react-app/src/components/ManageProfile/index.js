@@ -10,9 +10,6 @@ import { getAllPlaylistThunk } from "../../store/playlist";
 import DeletePlaylist from '../DeletePlaylist';
 import UpdatePlaylist from '../UpdatePlaylistModal';
 import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusCircle } from '@fortawesome/free-solid-svg-icons';
-import { faPenFancy } from '@fortawesome/free-solid-svg-icons'
 import UserProileModal from '../UpdateUserProfileModal';
 
 function ManageProfile() {
@@ -84,13 +81,13 @@ function ManageProfile() {
                     <div className='DeleteAndUpdate'>
                       <div className="deleteButton">
                         <OpenModalButton
-                          buttonText={<FontAwesomeIcon icon={faMinusCircle} style={{ color: "#fa0000" }} />}
+                          buttonText={<i className="fa-solid fa-circle-minus" style="color: #ff0505;"></i>}
                           modalComponent={<DeleteModal video={video} />}
                         />
                       </div>
                       <div className='editButton'>
                         <OpenModalButton
-                          buttonText={<FontAwesomeIcon icon={faPenFancy} style={{ color: "#DE9E48" }} />}
+                          buttonText={<i className="fa-solid fa-pen-fancy"></i>}
                           modalComponent={<EditVideoModal video={video} />}
                         />
                       </div>
@@ -123,13 +120,13 @@ function ManageProfile() {
                 <div className='PlaylistBtns'>
                   <div className='DeletePlaylistbtn'>
                     <OpenModalButton
-                      buttonText={<FontAwesomeIcon icon={faMinusCircle} style={{ color: "#fa0000" }} />}
+                      buttonText={<i className="fa-solid fa-circle-minus" style="color: #ff0505;"></i>}
                       modalComponent={<DeletePlaylist playlist={playlist} />}
                     />
                   </div>
                   <div className='UpdatePlaylistbtn'>
                     <OpenModalButton
-                      buttonText={<FontAwesomeIcon icon={faPenFancy} style={{ color: "#DE9E48" }} />}
+                      buttonText={<i className="fa-solid fa-pen-fancy"></i>}
                       modalComponent={<UpdatePlaylist playlist={playlist} />}
                     />
                   </div>
