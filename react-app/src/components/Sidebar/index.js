@@ -1,9 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
-import { faList } from '@fortawesome/free-solid-svg-icons';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import './sidebar.css';
 
 function Sidebar({ isOpen, onClose }) {
@@ -51,7 +47,7 @@ function Sidebar({ isOpen, onClose }) {
                 Home
               </div>
               <div>
-                <FontAwesomeIcon icon={faHouse} />
+              <i className="fa-solid fa-house"></i>
               </div>
             </NavLink>
           </div>
@@ -61,7 +57,7 @@ function Sidebar({ isOpen, onClose }) {
                 All Playlist
               </div>
               <div>
-                <FontAwesomeIcon icon={faList} />
+              <i className="fa-solid fa-list"></i>
               </div>
             </NavLink>
           </div>
@@ -71,7 +67,7 @@ function Sidebar({ isOpen, onClose }) {
                 Create Playlist
               </div>
               <div>
-                <FontAwesomeIcon icon={faPlus} />
+              <i className="fa-solid fa-plus"></i>
               </div>
             </NavLink>
           </div>

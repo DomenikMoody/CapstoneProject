@@ -5,8 +5,6 @@ import { getAllPlaylistThunk } from "../../store/playlist"
 import { NavLink, useHistory, useParams } from "react-router-dom"
 import OpenModalButton from "../OpenModalButton";
 import RemoveVideoFromPlaylist from "../RemoveVideoFromPlaylistModal"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 import { useModal } from '../../context/Modal'
 
 function GetSinglePlaylist() {
@@ -57,7 +55,7 @@ function GetSinglePlaylist() {
                   <td>{video?.artist}</td>
                   <td colSpan={3}>{video.uploader}</td>
                   {user.id === singlePlaylist?.userId && <div className="removeFromplaylistbtn"><td className="toremovebuttoncss" onClick={(e)=>e.stopPropagation()}><OpenModalButton
-                        buttonText={<FontAwesomeIcon icon={faMinusCircle} style={{color: "#fa0000",}} />}
+                        buttonText={<i className="fa-solid fa-circle-minus" style="color: #ff0000;"></i>}
                         onItemClick={closeModal}
                         modalComponent={<RemoveVideoFromPlaylist video={video} playlistId={ playlistID} />}
                         /></td></div>}

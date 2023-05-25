@@ -4,8 +4,6 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import Sidebar from '../Sidebar';
 import './Navigation.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 
 
 function Navigation({ isLoaded }) {
@@ -24,7 +22,7 @@ function Navigation({ isLoaded }) {
     <div className="navbar">
       <div className="LogoDiv">
         <button className="MenuButton " onClick={handleSidebarToggle}>
-          <FontAwesomeIcon icon={faBars} />
+        <i className="fa-solid fa-bars"></i>
         </button>
         <NavLink exact to="/" className="LogoLink">
           <img className="Logo" src="http://otakuxpress.s3.amazonaws.com/c20bde2d7f2b45f99a0a736cc49d325d.png" alt="Logo" />
