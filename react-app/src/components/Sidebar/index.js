@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faList } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { BsLinkedin, BsGithub } from "react-icons/bs";
 import './sidebar.css';
 
 function Sidebar({ isOpen, onClose }) {
@@ -89,8 +88,8 @@ function Sidebar({ isOpen, onClose }) {
           </div>
           <div>
             <div className='icons-bottom'>
-              <a className="GitHub" href="https://github.com/DomenikMoody" target="_blank"><BsGithub /></a>
-              <a className="BsLinkedin" href="https://www.linkedin.com/in/domenik-moody-90370521b/" target="_blank"><BsLinkedin /></a>
+              <a className="GitHub" href="https://github.com/DomenikMoody" target="_blank"><i className="fa-brands fa-github"></i></a>
+              <a className="BsLinkedin" href="https://www.linkedin.com/in/domenik-moody-90370521b/" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
             </div>
           </div>
         </div>
