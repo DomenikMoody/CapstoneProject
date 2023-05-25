@@ -24,14 +24,14 @@
     text-decoration: none;
 }
 
-.UploadAVideo > * {
+.UploadAVideo>* {
     background-color: #DE9E48;
     border: none;
     border-radius: 20px;
     padding: 15px;
 }
 
-.UploadAVideo > *:hover {
+.UploadAVideo>*:hover {
     background-color: #1a1918;
     color: #DE9E48;
 }
@@ -42,8 +42,8 @@
     justify-content: space-between;
 }
 
-.deleteButton > *,
-.editButton > * {
+.deleteButton>*,
+.editButton>* {
     background-color: transparent;
     border: none;
 }
@@ -53,9 +53,44 @@
     justify-content: space-between;
 }
 
-.PlaylistBtns > *,
-.DeletePlaylistbtn > *,
-.UpdatePlaylistbtn > * {
+.PlaylistBtns>*,
+.DeletePlaylistbtn>*,
+.UpdatePlaylistbtn>* {
     background-color: transparent;
     border: none;
+}
+
+.EntirePage {
+    margin-top: 100px;
+}
+
+.ManageProfilePic {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.flexmanagepage {
+    display: flex;
+    width: 100%;
+    gap: 40px;
+}
+
+.updateuseProfilebtn>* {
+    border: none;
+    background-color: #1a1918;
+    color: #DE9E48;
+}
+.updateuseProfilebtn>*:hover {
+    border: none;
+    background-color: #DE9E48;
+    color:#1a1918;
+}
+.bioStuff{
+    width: 70%;
+}
+.user-profile-pic{
+width: 30%;
+}
+.TitletoPage{
+    color: #DE9E48;
 }

@@ -28,12 +28,6 @@ const CreatePlaylistAction = (playlist) => {
         payload: playlist
     }
 }
-// const deleteVideoFromPlaylistAction = (playlistId, videoId) => {
-//     return{
-//         type: DELETE_VIDEO_FROM_PLAYLIST,
-//         payload: {playlistId, videoId}
-//     }
-// }
 export const deletePlaylistThunk = (playlistId) => async (dispatch) => {
     const res = await fetch(`/playlists/${playlistId}`, {
         method: 'DELETE',
@@ -72,7 +66,6 @@ export const deleteVideoFromPlaylistThunk = (playlist_id, video_id) => async dis
     }
 }
 export const getAllPlaylistThunk = () => async dispatch => {
-    console.log("ARE WE GETTING ANYTHING IN THE THUNK")
     const res = await fetch('/playlists/')
 
     if (res.ok) {

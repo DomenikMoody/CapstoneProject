@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from "react";
 import { editVideoThunk, getvideoThunk, getSoloVideoThunk } from "../../store/videos";
 import { useModal } from '../../context/Modal'
+import { getAllVideosThunk } from "../../store/videos";
 import "./EditVideoModal.css"
 
 
@@ -46,11 +47,13 @@ const EditVideoModal = (video) => {
             setAboutVideo(text);
         }
     }
+    const handleGenreChange = (e) => {
+        setGenre(e.target.value);
+    }
 
     const onSubmit = async (e) => {
         e.preventDefault();
 
-        // Validation
         if (!title) {
             setError('Title is required');
             return;
@@ -77,6 +80,7 @@ const EditVideoModal = (video) => {
 
         await dispatch(editVideoThunk(videoInformation, videoId));
         await dispatch(getSoloVideoThunk(videoId));
+        await dispatch(getAllVideosThunk())
         closeModal();
         history.push(`/manage/`);
     };
@@ -109,7 +113,7 @@ const EditVideoModal = (video) => {
                 </label>
                 <label>
                     <div>Genre</div>
-                    <input id="video-name" type="textarea" value={genre} placeholder='About Video' onChange={handleArtistChange} />
+                    <input id="video-name" type="textarea" value={genre} placeholder='About Video' onChange={handleGenreChange} />
                 </label>
                 <div className="divforbuttons">
                     <div className='SubmitVideoBtn'>

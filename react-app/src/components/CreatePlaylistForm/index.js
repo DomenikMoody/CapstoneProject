@@ -60,7 +60,7 @@ const PlaylistForm = () => {
 
         setTimeout(() => setIsUploading(false), 3000)
 
-        history.push('/')
+        history.push('/playlist/all')
 
     }
 

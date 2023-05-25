@@ -40,3 +40,6 @@
     background-color: #1a1918;
     color: #DE9E48;
 }
+.positioncorrectlyinputandcounter{
+    display: flex;
+}

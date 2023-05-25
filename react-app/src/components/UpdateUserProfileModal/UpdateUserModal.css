@@ -1,0 +1,27 @@
+.user-modal{
+    padding: 50px;
+}
+
+label{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.hideprofilepicture{
+    display: none;
+}
+.seperatingDeleteandUpdate{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.submit{
+    background-color: #1a1918;
+    color: #DE9E48;
+    font-family: 'Comfortaa', sans-serif;
+    padding: 15px;
+    border: none;
+}
+.submit:hover{
+    background-color: #DE9E48;
+    color:black;
+}

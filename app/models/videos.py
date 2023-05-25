@@ -50,5 +50,6 @@ class Video(db.Model):
             'uploader': self.uploader.username,
             'videoImage': self.video_image,
             'aboutVideo': self.about_video,
-            'genre': self.genre
+            'genre': self.genre,
+            'likes': [user.to_dict_no_playlist() for user in self.video_likes]
         }

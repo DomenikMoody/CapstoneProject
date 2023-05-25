@@ -29,9 +29,36 @@ const deleteVideo = (videoId) => {
         payload: videoId
     }
 }
+
+
+export const unlikeVideoThunk = (videoId, userId) => async (dispatch) => {
+    const response = await fetch(`/videos/${videoId}/likes/users/${userId}`, {
+        method: "DELETE",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({videoId, userId})
+    })
+    if (response.ok) {
+        const data = await response.json()
+        return response
+    } else {
+        return {"message": "unlike video not working"}
+    }
+}
+export const likeVideoThunk = (videoId, userId) => async (dispatch) => {
+    const response = await fetch(`/videos/${videoId}/likes/users/${userId}`, {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({videoId, userId})
+    })
+    if (response.ok) {
+        const data = await response.json()
+        // dispatch(getSoloVideoThunk())
+        return response
+    } else {
+        return {"message": "like video not working"}
+    }
+}
 export const editVideoThunk = (video, id) => async (dispatch) => {
-    console.log(video, "HERE IS THE THUNK VIDEO ")
-    console.log(id, "HERE IS THE THUNK ID ")
     const response = await fetch(`/videos/${id}`, {
         method: 'PUT',
         headers: {'Content-Type': 'application/json'},
@@ -39,8 +66,10 @@ export const editVideoThunk = (video, id) => async (dispatch) => {
     })
     if (response.ok) {
         const data = response.json()
-        console.log(data, "HERE IS THE RESPONSE DATA")
+        await dispatch(getAllVideosThunk())
         return video
+    } else {
+        console.log("RESPONSE IS NOT OK")
     }
 }
 export const removeVideoThunk = (videoId) => async (dispatch) => {
@@ -78,6 +107,7 @@ export const getAllVideosThunk = () => async (dispatch) => {
         return data
     }
 }
+
 const initialState = { videos: null , singleVideo: null};
 const videoReducer = (state = initialState, action) => {
     let newState;

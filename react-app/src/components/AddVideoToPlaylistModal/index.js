@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import { useModal } from "../../context/Modal";
 import { useEffect, useState } from "react";
 import { addVideoToPlaylistThunk } from "../../store/playlist";
-import { useHistory } from "react-router-dom";
 import { getUserByIdThunk } from "../../store/session";
 import "./AddVideoToPlaylist.css"
 
@@ -11,7 +10,7 @@ function AddVideotoPlaylist({ video }) {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
     const [checked, setChecked] = useState([]);
-    const history = useHistory();
+
 
     const { closeModal } = useModal();
 

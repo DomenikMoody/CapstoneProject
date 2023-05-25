@@ -6,28 +6,69 @@ import AddVideotoPlaylist from "../AddVideoToPlaylistModal";
 import { useModal } from '../../context/Modal'
 import OpenModalButton from "../OpenModalButton";
 import "./SingleVideoPage.css";
+import { getAllCommentsThunk } from "../../store/comments";
+import { createCommentsThunk } from "../../store/comments";
+import DeleteCommentModal from "../DeleteCommentModal/index,";
+import EditCommentModal from "../EditCommentModal";
+import LoginFormModal from "../LoginFormModal";
+import SignupFormModal from "../SignupFormModal"
+import LikeForm from "./likeform";
 
 function SingleVideoPage() {
   const params = useParams();
   const videoId = params.videoid;
-  const soloVideo = useSelector((state) => state.video);
+  const soloVideo = useSelector(state => state.video);
+  const user = useSelector(state => state.session.user)
+  const allcommentsObj = useSelector(state => state.comments.allComments);
+  const commentArray = allcommentsObj ? Object.values(allcommentsObj) : [];
   const dispatch = useDispatch();
   const { closeModal } = useModal()
   const pageVideo = soloVideo[Number(videoId)];
   const [comments, setComments] = useState("")
+  const maxCharacters = 250
+
+  const handleCommentChange = (e) => {
+    const inputComments = e.target.value;
+    if (inputComments.length <= maxCharacters) {
+      setComments(inputComments);
+    }
+  };
+
+  const remainingCharacters = maxCharacters - comments.length;
+
+  const getCharacterCountClass = () => {
+    if (remainingCharacters >= 175) {
+      return 'green';
+    } else if (remainingCharacters >= 100) {
+      return 'yellow';
+    } else if (remainingCharacters >= 50) {
+      return 'orange';
+    } else {
+      return 'red';
+    }
+  };
+
+  const handleCommentSubmit = async (e) => {
+    e.preventDefault()
+    const formData = new FormData()
+
+    formData.append('user_id', user.id)
+    formData.append('video_id', videoId)
+    formData.append('comment', comments)
+
+    await dispatch(createCommentsThunk(formData))
+    await dispatch(getAllCommentsThunk())
+    setComments("")
+  }
 
   useEffect(() => {
     dispatch(getSoloVideoThunk(videoId));
+    dispatch(getAllCommentsThunk())
   }, [dispatch]);
-
-  const handleChange = (e) => {
-    setComments(e.target.value)
-  }
 
   if (pageVideo === null || !pageVideo?.awsUrl) {
     return null;
   }
-
   return (
     <div className="singleVideoPageContainer">
       <div className="videoPlayer">
@@ -35,7 +76,15 @@ function SingleVideoPage() {
           <source src={pageVideo?.awsUrl} type="video/mp4" />
         </video>
         <div className="videoInfo">
-          <div className="videoTitlesingle">{pageVideo?.title}</div>
+          <div className="undervideotext">
+            <div className="videoTitlesingle">{pageVideo?.title}</div>
+            <div className="likeStuff">
+              <div>Likes: {pageVideo.likes.length}</div>
+              <div>
+                <LikeForm video={pageVideo} />
+              </div>
+              </div>
+          </div>
           <div className="studioAndplaylist">
             <div className="videoArtist">Made By: {pageVideo?.artist}</div>
             <div>
@@ -52,19 +101,110 @@ function SingleVideoPage() {
           <div className="videoBio">{pageVideo?.aboutVideo}</div>
         </div>
       </div>
-      {/* <div className="CommentsContainer">
-      <form className='createCommentForm'>
-                <div>
+      <div className="CommentsContainer">
+        <div className="commentTitlediv">
+          <h2 className="CommentsTitle">Comments</h2>
+        </div>
 
-                    <label>
-                        <div className="">
-                          Comments
-                        </div>
-                        <input id="commentArea" type="text" name="video"  onChange={handleChange} className='VideoUploadbtn' />
-                    </label>
+        {user ? (
+          <div className="boxForcommentInput">
+            <div className="userNamepicforComment">
+              <img className="userNamepicforCommentimage" src={user?.profileImage.length === 0 ? "https://static1.squarespace.com/static/5898e29c725e25e7132d5a5a/58aa11bc9656ca13c4524c68/58aa11e99656ca13c45253e2/1487540713345/600x400-Image-Placeholder.jpg?format=original" : user?.profileImage} />
+            </div>
+            <form className='createCommentForm' onSubmit={handleCommentSubmit}>
+              <div className="forthefull">
+                <label>
+                  <textarea
+                    id="commentArea"
+                    type="text"
+                    name="Comment"
+                    placeholder="Type Comment Here"
+                    value={comments}
+                    onChange={handleCommentChange}
+                    className="VideoUploadbtn"
+                    maxLength={maxCharacters}
+                  />
+                </label>
+                <div className="characterCounter">
+                  <div>
+                    Remaining characters: <span className={getCharacterCountClass()}>{remainingCharacters}</span>
+                  </div>
+                  <div>
+                    <button type="submit" className="commentButton">Comment</button>
+                  </div>
                 </div>
-                </form>
-      </div> */}
+              </div>
+            </form>
+          </div>
+        ) : (
+          <div className="loginMessageforComments">
+            <div>
+              <h3 className="loginMessage">You Need To Be Logged In to Post Comments</h3>
+            </div>
+            <div>
+              <h4>Log In or Sign Up here</h4>
+            </div>
+            <div className="CommentNotLoginBtn">
+              <div className="loginComment">
+                <OpenModalButton
+                  buttonText="Log In"
+                  onItemClick={closeModal}
+                  modalComponent={<LoginFormModal />}
+                />
+              </div>
+              <div className="loginComment">
+                <OpenModalButton
+                  buttonText="Sign In"
+                  onItemClick={closeModal}
+                  modalComponent={<SignupFormModal />}
+                />
+              </div>
+            </div>
+
+          </div>
+        )}
+
+        {commentArray && commentArray
+          .filter(comment => comment.videoId === +videoId).toReversed()
+          .map((comment, index) => (
+            <div className="CommentContainer">
+              <div className="userPicforCommentcontainer">
+                <img className="userPicforComment" src={comment?.userimage.length === 0 ? "https://static1.squarespace.com/static/5898e29c725e25e7132d5a5a/58aa11bc9656ca13c4524c68/58aa11e99656ca13c45253e2/1487540713345/600x400-Image-Placeholder.jpg?format=original" : comment?.userimage} />
+              </div>
+              <div className="NameAndComment">
+                <div className="ownerandTime">
+                  <div className="commentOwner">
+                    @{comment.user}
+                  </div>
+                  <div className="commentOwner">
+                    uploaded at: {comment.createdAt}
+                  </div>
+                </div>
+
+                <div className="actualcomment">
+                  {comment?.comment}
+                </div>
+                {user?.id === comment.userid && (
+                  <div className="btnsforDeleteAndEdit">
+                    <div className="DeleteCommentModalBtn">
+                      <OpenModalButton
+                        buttonText="DELETE"
+                        modalComponent={<DeleteCommentModal comment={comment} />}
+                      />
+                    </div>
+                    <div className="DeleteCommentModalBtn">
+                      <OpenModalButton
+                        buttonText="EDIT"
+                        modalComponent={<EditCommentModal comment={comment} />}
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))
+        }
+      </div>
     </div>
   );
 }

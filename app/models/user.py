@@ -16,7 +16,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False, unique=True)
     hashed_password = db.Column(db.String(255), nullable=False)
     bio = db.Column(db.String(1500))
-    profile_image = db.Column(db.String(255))
+    profile_image = db.Column(db.String(255), default="http://otakuxpress.s3.amazonaws.com/3091a7061666480f8d31c142ca5cafed.jpg")
 
     playlists = db.relationship(
         "Playlist",
@@ -53,6 +53,17 @@ class User(db.Model, UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password, password)
 
+    def to_dict_no_playlist(self):
+        return {
+            'id': self.id,
+            'firstName': self.first_name,
+            'lastName': self.last_name,
+            'username': self.username,
+            'email': self.email,
+            'bio': self.bio,
+            'profileImage': self.profile_image,
+            'likes': [video.id for video in self.user_likes]
+        }
     def to_dict(self):
         return {
             'id': self.id,

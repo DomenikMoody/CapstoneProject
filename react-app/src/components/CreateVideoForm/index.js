@@ -70,7 +70,7 @@ function CreateVideoForm() {
       setError('About Video is required');
       return;
     }
-    if (!genre){
+    if (!genre) {
       setError('genre is required');
       return;
     }
@@ -153,14 +153,19 @@ function CreateVideoForm() {
         </label>
         <label>
           <div>About Video (Max 250 characters)</div>
-          <input
-            id='about-video'
-            type='text'
-            value={aboutVideo}
-            placeholder='About Video'
-            onChange={handleAboutVideoChange}
-          />
-          <div className='character-counter'>{aboutVideo.length}/250</div>
+          <div className='positioncorrectlyinputandcounter'>
+            <div>
+              <input
+                id='about-video'
+                type='text'
+                value={aboutVideo}
+                placeholder='About Video'
+                onChange={handleAboutVideoChange}
+              />
+            </div>
+            <div className='charactercounter'>{aboutVideo.length}/250</div>
+          </div>
+
         </label>
         <label>
           <div>Genre</div>

@@ -1,6 +1,8 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, redirect, request
 from flask_login import login_required
-from app.models import User
+from app.models import User, db
+from app.forms import EditUserForm
+from app.api.aws_helpers import get_unique_filename, upload_file_to_s3, remove_file_from_s3
 
 user_routes = Blueprint('users', __name__)
 
@@ -23,3 +25,33 @@ def user(id):
     """
     user = User.query.get(id)
     return user.to_dict()
+
+@user_routes.route('/<int:id>/edit', methods=['PUT'])
+@login_required
+def user_edit(id):
+    user = User.query.get(id)
+    form = EditUserForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+    print(form.data, "HERE IS THE FORM INFO STUFF =========================================================>")
+    if form.validate_on_submit():
+
+        if form.data['profile_image']:
+            profile_pic = form.data['profile_image']
+            profile_pic.filename = get_unique_filename(profile_pic.filename)
+            upload = upload_file_to_s3(profile_pic)
+
+            if 'url' not in upload:
+                return upload['errors']
+            aws_url = upload['url']
+            user.profile_image = aws_url
+        if form.data['username'] != 'giraffenostrilwidenderplusULTRA':
+            user.username = form.data['username']
+
+        user.first_name = form.data['first_name']
+        user.last_name = form.data['last_name']
+        user.bio = form.data['bio']
+
+        db.session.commit()
+        return jsonify(user.to_dict())
+    else:
+        return jsonify({"message": "You DID NOT update your profile! Aw man!"})

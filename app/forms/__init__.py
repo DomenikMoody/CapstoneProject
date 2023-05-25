@@ -6,3 +6,5 @@ from .playlist_form import PlaylistForm
 from .edit_playlist_form import EditPlaylistForm
 from .edit_user_form import EditUserForm
 from .add_video_to_playlist_form import AddVideoToPlaylistForm
+from .comment_form import CommentForm
+from .edit_comment_form import EditCommentForm

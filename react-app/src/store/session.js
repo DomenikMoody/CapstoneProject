@@ -2,6 +2,7 @@
 const SET_USER = "session/SET_USER";
 const REMOVE_USER = "session/REMOVE_USER";
 const GET_USER_BY_ID = 'session/GET_USER_BY_ID';
+const UPDATE_USER = 'session/UPDATE_USER'
 
 const setUser = (user) => ({
 	type: SET_USER,
@@ -15,6 +16,12 @@ const getUser = (data) => {
 	return {
 		type: GET_USER_BY_ID,
 		payload: data
+	}
+}
+const updateUser = (data) => {
+	return {
+		type: UPDATE_USER,
+		payload : data
 	}
 }
 const initialState = { user: null };
@@ -34,7 +41,19 @@ export const authenticate = () => async (dispatch) => {
 		dispatch(setUser(data));
 	}
 };
+export const updateUserThunk = (userInfo, id) => async dispatch => {
 
+	const res = await fetch(`/api/users/${id}/edit`, {
+		method: "PUT",
+		body:userInfo
+	})
+	if (res.ok){
+		const data = await res.json()
+		dispatch(updateUser(data))
+	} else {
+		return {"message":"user failed to update"}
+	}
+}
 export const login = (email, password) => async (dispatch) => {
 	const response = await fetch("/api/auth/login", {
 		method: "POST",
@@ -118,7 +137,12 @@ export default function reducer(state = initialState, action) {
 			return { user: null };
 		case GET_USER_BY_ID: {
 			const newState = { ...state, user: { ...state.user, playlists: action.payload.playlists, likes: action.payload.likes }, userPage: action.payload }
-
+			return newState
+		}
+		case UPDATE_USER: {
+			const newState = {...state, user:{...state.user}, userPage:{...state.userPage}}
+			newState.user = action.payload
+			newState.userPage = action.payload
 			return newState
 		}
 		default:

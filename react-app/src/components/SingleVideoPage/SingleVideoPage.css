@@ -32,3 +32,106 @@
     background-color:  #DE9E48;
     color:#1a1918;
 }
+.CommentsTitle{
+    color: #DE9E48;
+}
+#commentArea{
+    width: 100%;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    background-color: #1a1918;
+    color:white;
+    outline:none;
+    font-size: 18px;
+}
+.green {
+    color: green;
+  }
+
+  .yellow {
+    color: yellow;
+  }
+
+  .orange {
+    color: orange;
+  }
+
+  .red {
+    color: red;
+  }
+.characterCounter{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.commentButton{
+    background-color: #1a1918;
+    color:#DE9E48;
+    border: none;
+}
+.commentButton:hover{
+    background-color:#DE9E48;
+    color: #1a1918;
+}
+.commentOwner{
+    font-size: 10px;
+}
+.CommentContainer{
+    display: flex;
+    margin-top: 50px;
+    gap: 10px
+}
+.userPicforComment{
+    width: 40px;
+    height: 40px;
+}
+.boxForcommentInput{
+    display: flex;
+    width: 70%;
+}
+.userNamepicforCommentimage{
+    height: 60px;
+    width: 60px;
+}
+.createCommentForm{
+    width: 100%;
+}
+.DeleteCommentModalBtn >*{
+    background-color: #1a1918;
+    color: #DE9E48;
+    border: none;
+}
+.CommentNotLoginBtn{
+    display: flex;
+    gap: 20px
+    ;
+}
+.loginComment >*{
+    background-color: #1a1918;
+    color: #DE9E48;
+    border: none;
+}
+.loginComment >*:hover{
+    background-color: #DE9E48;
+    color: black;
+}
+.btnsforDeleteAndEdit{
+    display: flex;
+    gap: 20px;
+}
+.ownerandTime{
+    display: flex;
+    gap: 20px;
+}
+.actualcomment{
+    margin-top: 12px;
+}
+.undervideotext{
+    display: flex;
+    justify-content: space-between;
+}
+.likeStuff{
+    display: flex;
+    gap: 10px;
+}

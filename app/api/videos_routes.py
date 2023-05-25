@@ -61,8 +61,11 @@ def edit_video_by_id(id):
     form = EditVideoForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     if form.validate_on_submit:
+
         video.title = form.data['title']
         video.artist = form.data['artist']
+        video.aboutVideo = form.data['aboutVideo']
+        video.genre = form.data['genre']
         db.session.commit()
         return video.to_dict()
     else:
@@ -85,18 +88,6 @@ def delete_video_by_id(id):
         'message': 'video deleted'
     })
 
-@video_routes.route('/<int:id>/likes/users/<int:userId>',methods=["POST"])
-@login_required
-def like_video_by_id(id, userId):
-    video = Video.query.get(id)
-    user = User.query.get(userId)
-    video.video_likes.append(user)
-    db.session.commit()
-
-    return jsonify({
-        "message": f"{video.title} liked by {user.username}"
-    })
-
 
 @video_routes.route('/<int:id>/likes/users/<int:userId>',methods=["DELETE"])
 @login_required
@@ -108,4 +99,15 @@ def unlike_video_by_id(id, userId):
 
     return jsonify({
         "message": f"{video.title} unliked by {user.username}"
+    })
+@video_routes.route('/<int:id>/likes/users/<int:userId>',methods=["POST"])
+@login_required
+def like_video_by_id(id, userId):
+    video = Video.query.get(id)
+    user = User.query.get(userId)
+    video.video_likes.append(user)
+    db.session.commit()
+
+    return jsonify({
+        "message": f"{video.title} liked by {user.username}"
     })

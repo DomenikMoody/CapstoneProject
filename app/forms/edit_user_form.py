@@ -6,7 +6,6 @@ from flask_wtf.file import FileField, FileAllowed
 from app.api.aws_helpers import ALLOWED_IMAGES
 
 def username_exists(form, field):
-    # Checking if username is already in use
     username = field.data
     user = User.query.filter(User.username == username).first()
     if user:

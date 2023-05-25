@@ -12,11 +12,8 @@ import UpdatePlaylist from '../UpdatePlaylistModal';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinusCircle } from '@fortawesome/free-solid-svg-icons';
-import {faPenFancy} from '@fortawesome/free-solid-svg-icons'
-
-
-
-
+import { faPenFancy } from '@fortawesome/free-solid-svg-icons'
+import UserProileModal from '../UpdateUserProfileModal';
 
 function ManageProfile() {
   const user = useSelector(state => state.session.user);
@@ -29,14 +26,36 @@ function ManageProfile() {
     .map(playlist => playlist);
 
   useEffect(() => {
-    dispatch(getAllPlaylistThunk())
+    dispatch(getAllPlaylistThunk());
     dispatch(getAllVideosThunk());
   }, [dispatch, Object.values(allPlaylist).length]);
 
   return (
-    <div>
-      <h1>Manage Your Profile</h1>
-      <h2>HERE ARE ALL THE VIDEOS {user.name} UPLOADED</h2>
+    <div className='EntirePage'>
+      <h1 className='TitletoPage'>Manage Your Profile</h1>
+      <div className="banner">
+        <div className='flexmanagepage'>
+          <div className="user-profile-pic">
+            <img className='ManageProfilePic' src={user?.profileImage?.length === 0 ? "https://static1.squarespace.com/static/5898e29c725e25e7132d5a5a/58aa11bc9656ca13c4524c68/58aa11e99656ca13c45253e2/1487540713345/600x400-Image-Placeholder.jpg?format=original" : user?.profileImage} />
+          </div>
+          <div>
+            <div className="username">
+              <h1 className='TitletoPage'>{user?.firstName === null ? "Update Your Profile Info" : user?.firstName}{' '}{user?.lastName}</h1>
+            </div>
+            <div className="bioStuff">
+              <h2>{user?.bio?.length === 0 ? "ADD A BIO TO YOUR ACCOUNT!!!!!" : user?.bio}</h2>
+              <div className='updateuseProfilebtn'>
+                <OpenModalButton
+                  buttonText="Update User Profile"
+                  modalComponent={<UserProileModal />}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 className='TitletoPage'>HERE ARE ALL THE VIDEOS {user.name} UPLOADED</h2>
       <div className="UploadAVideo">
         <OpenModalButton
           buttonText={<i className="fas fa-cloud-upload-alt">UPLOAD A VIDEO</i>}
@@ -45,15 +64,15 @@ function ManageProfile() {
       </div>
 
       <div className='videoCardManage'>
-        {allvideosArray.length > 0 &&
+        {allvideosArray.some(video => video?.uploader === user?.username) ? (
           allvideosArray.map(video => {
             if (video?.uploader === user?.username) {
               return (
-                <div classname="VideoCardContainermanage" key={video?.id}>
+                <div className="VideoCardContainermanage" key={video?.id}>
                   <div className='VideoCard'>
                     <NavLink className="ManageVideoLinks" to={`/video/${video?.id}`}>
                       <div className='videoThumbNail'>
-                        <img src={video?.videoImage}></img>
+                        <img src={video?.videoImage} alt="Video Thumbnail" />
                       </div>
                       <div className='videoTitle'>
                         {video?.title}
@@ -62,30 +81,35 @@ function ManageProfile() {
                         Studio: {video?.artist}
                       </div>
                     </NavLink>
-                  <div className='DeleteAndUpdate'>
-                    <div className="deleteButton">
-                      <OpenModalButton
-                        buttonText={<FontAwesomeIcon icon={faMinusCircle} style={{color: "#fa0000",}} />}
-                        modalComponent={<DeleteModal video={video} />}
-
-                      />
+                    <div className='DeleteAndUpdate'>
+                      <div className="deleteButton">
+                        <OpenModalButton
+                          buttonText={<FontAwesomeIcon icon={faMinusCircle} style={{ color: "#fa0000" }} />}
+                          modalComponent={<DeleteModal video={video} />}
+                        />
+                      </div>
+                      <div className='editButton'>
+                        <OpenModalButton
+                          buttonText={<FontAwesomeIcon icon={faPenFancy} style={{ color: "#DE9E48" }} />}
+                          modalComponent={<EditVideoModal video={video} />}
+                        />
+                      </div>
                     </div>
-                    <div className='editButton'>
-                      <OpenModalButton
-                        buttonText={<FontAwesomeIcon icon={faPenFancy} style={{color: "#DE9E48",}} />}
-                        modalComponent={<EditVideoModal video={video} />}
-                      />
-                    </div>
-                  </div>
                   </div>
                 </div>
               );
             }
             return null;
-          })}
+          })
+        ) : (
+          <div className="noVideosMessage">
+            You haven't uploaded any videos yet... but soon we hope.
+          </div>
+        )}
       </div>
+
       <div>
-        <h2>HERE ARE ALL THE PLAYLISTS YOU CREATED</h2>
+        <h2 className='TitletoPage'>HERE ARE ALL THE PLAYLISTS YOU CREATED</h2>
         <div className='playlistCard'>
           {userPlaylist.length > 0 &&
             userPlaylist.map(playlist => (
@@ -97,26 +121,23 @@ function ManageProfile() {
                   {playlist.name}
                 </div>
                 <div className='PlaylistBtns'>
-                <div className='DeletePlaylistbtn'>
-                  <OpenModalButton
-                    buttonText={<FontAwesomeIcon icon={faMinusCircle} style={{color: "#fa0000",}} />}
-                    modalComponent={<DeletePlaylist playlist={playlist} />}
+                  <div className='DeletePlaylistbtn'>
+                    <OpenModalButton
+                      buttonText={<FontAwesomeIcon icon={faMinusCircle} style={{ color: "#fa0000" }} />}
+                      modalComponent={<DeletePlaylist playlist={playlist} />}
                     />
-                </div>
-                <div className='UpdatePlaylistbtn'>
-                  <OpenModalButton
-                    buttonText={<FontAwesomeIcon icon={faPenFancy} style={{color: "#DE9E48",}} />}
-                    modalComponent={<UpdatePlaylist playlist={playlist} />
-                  }
-                  />
-                </div>
                   </div>
-
+                  <div className='UpdatePlaylistbtn'>
+                    <OpenModalButton
+                      buttonText={<FontAwesomeIcon icon={faPenFancy} style={{ color: "#DE9E48" }} />}
+                      modalComponent={<UpdatePlaylist playlist={playlist} />}
+                    />
+                  </div>
+                </div>
               </div>
             ))}
         </div>
       </div>
-
     </div>
   );
 }
