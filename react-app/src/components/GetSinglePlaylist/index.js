@@ -55,7 +55,7 @@ function GetSinglePlaylist() {
                   <td>{video?.artist}</td>
                   <td colSpan={3}>{video.uploader}</td>
                   {user.id === singlePlaylist?.userId && <div className="removeFromplaylistbtn"><td className="toremovebuttoncss" onClick={(e)=>e.stopPropagation()}><OpenModalButton
-                        buttonText={<i className="fa-solid fa-circle-minus" style="color: #ff0000;"></i>}
+                        buttonText={<i class="fas fa-minus-circle"></i>}
                         onItemClick={closeModal}
                         modalComponent={<RemoveVideoFromPlaylist video={video} playlistId={ playlistID} />}
                         /></td></div>}
