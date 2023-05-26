@@ -67,7 +67,7 @@ function Sidebar({ isOpen, onClose }) {
                 Create Playlist
               </div>
               <div>
-              <i className="far fa-plus"></i>
+              <i className="fas fa-plus"></i>
               </div>
             </NavLink>
           </div>
