@@ -22,7 +22,7 @@ function Navigation({ isLoaded }) {
     <div className="navbar">
       <div className="LogoDiv">
         <button className="MenuButton " onClick={handleSidebarToggle}>
-        <i className="fa-solid fa-bars"></i>
+        <i className="fas fa-bars"></i>
         </button>
         <NavLink exact to="/" className="LogoLink">
           <img className="Logo" src="http://otakuxpress.s3.amazonaws.com/c20bde2d7f2b45f99a0a736cc49d325d.png" alt="Logo" />

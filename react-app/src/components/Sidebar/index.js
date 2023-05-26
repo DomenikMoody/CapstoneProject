@@ -47,7 +47,7 @@ function Sidebar({ isOpen, onClose }) {
                 Home
               </div>
               <div>
-              <i className="fa-solid fa-house"></i>
+              <i className="fas fa-home"></i>
               </div>
             </NavLink>
           </div>
@@ -57,7 +57,7 @@ function Sidebar({ isOpen, onClose }) {
                 All Playlist
               </div>
               <div>
-              <i className="fa-solid fa-list"></i>
+              <i className="fas fa-list"></i>
               </div>
             </NavLink>
           </div>
@@ -67,7 +67,7 @@ function Sidebar({ isOpen, onClose }) {
                 Create Playlist
               </div>
               <div>
-              <i className="fa-solid fa-plus"></i>
+              <i className="far fa-plus"></i>
               </div>
             </NavLink>
           </div>
@@ -84,8 +84,8 @@ function Sidebar({ isOpen, onClose }) {
           </div>
           <div>
             <div className='icons-bottom'>
-              <a className="GitHub" href="https://github.com/DomenikMoody" target="_blank"><i className="fa-brands fa-github"></i></a>
-              <a className="BsLinkedin" href="https://www.linkedin.com/in/domenik-moody-90370521b/" target="_blank"><i className="fa-brands fa-linkedin-in"></i></a>
+              <a className="GitHub" href="https://github.com/DomenikMoody" target="_blank"><i class="fab fa-github"></i></a>
+              <a className="BsLinkedin" href="https://www.linkedin.com/in/domenik-moody-90370521b/" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
         </div>

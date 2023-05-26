@@ -81,13 +81,13 @@ function ManageProfile() {
                     <div className='DeleteAndUpdate'>
                       <div className="deleteButton">
                         <OpenModalButton
-                          buttonText={<i className="fa-solid fa-circle-minus" style="color: #ff0505;"></i>}
+                          buttonText={<i class="fas fa-minus-circle" style="color: #ff0505;"></i>}
                           modalComponent={<DeleteModal video={video} />}
                         />
                       </div>
                       <div className='editButton'>
                         <OpenModalButton
-                          buttonText={<i className="fa-solid fa-pen-fancy"></i>}
+                          buttonText={<i class="fas fa-pen-fancy"></i>}
                           modalComponent={<EditVideoModal video={video} />}
                         />
                       </div>
@@ -120,13 +120,13 @@ function ManageProfile() {
                 <div className='PlaylistBtns'>
                   <div className='DeletePlaylistbtn'>
                     <OpenModalButton
-                      buttonText={<i className="fa-solid fa-circle-minus" style="color: #ff0505;"></i>}
+                      buttonText={<i class="fas fa-minus-circle" style="color: #ff0505;"></i>}
                       modalComponent={<DeletePlaylist playlist={playlist} />}
                     />
                   </div>
                   <div className='UpdatePlaylistbtn'>
                     <OpenModalButton
-                      buttonText={<i className="fa-solid fa-pen-fancy"></i>}
+                      buttonText={<i class="fas fa-pen-fancy"></i>}
                       modalComponent={<UpdatePlaylist playlist={playlist} />}
                     />
                   </div>
