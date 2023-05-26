@@ -1,7 +1,7 @@
 """empty message
 
 Revision ID: 4a8deaec3f96
-Revises: 
+Revises:
 Create Date: 2023-05-25 23:46:45.806759
 
 """
@@ -34,7 +34,7 @@ def upgrade():
     op.create_table('playlists',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=True),
-    sa.Column('name', sa.String(length=40), nullable=False),
+    sa.Column('name', sa.String(length=255), nullable=False),
     sa.Column('playlist_image', sa.String(length=255), nullable=False),
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
