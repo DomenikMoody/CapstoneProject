@@ -223,9 +223,128 @@ def seed_videos(seeded_users):
         about_video = "Shu defeats Gai, saving the world from the Fourth Apocalypse. Inori sacrifices herself to save Shu, and Tokyo is rebuilt. Years later, Shu, visually impaired, celebrates with his friends. He remembers Inori by a lakeside, treasuring their memories.",
         genre = "Action fiction"
     )
+    video23 = Video(
+        title="Quantum of Trust",
+        artist="Silver Link Studio Palette",
+        aws_url="http://otakuxpress.s3.amazonaws.com/1a7d0bfb1d0b4859a27eef4937c66fa1.mp4",
+        uploader = seeded_users[1],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/4c9bc3bb569440c28d7dcd8db200f949.jpg",
+        about_video = " Lugh trains rookie, eliminates crime guild members. Flashback reveals past life while he accepts contract to assassinate corrupt nobles aiding slave auction.",
+        genre = "Isekai"
+    )
+    video24 = Video(
+        title="Deal of Reincarnation",
+        artist="Silver Link Studio Palette",
+        aws_url="http://otakuxpress.s3.amazonaws.com/50725872f4744e80866b9aa49e15aee2.mp4",
+        uploader = seeded_users[1],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/b1a62a5ae5e64337aca80a718923d3ce.jpg",
+        about_video = "The Assasin is reborn as a child of the Tuatha Dé family, a noble house of assassins. Lugh finds a magic teacher named Dia Viekone.",
+        genre = "Isekai"
+    )
+    video25 = Video(
+        title="Magic of Bonds",
+        artist="Silver Link Studio Palette",
+        aws_url="http://otakuxpress.s3.amazonaws.com/323fb4d2031e4f4183dd6b510c3ee2ca.mp4",
+        uploader = seeded_users[1],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/503e780bf9ca4d099c15f3e5ce852f28.jpg",
+        about_video = "Dia and Lugh become emotionally attached to each other. Lugh's father decides that it is time for Lugh to assassinate someone for the first time.",
+        genre = "Isekai"
+    )
+    video26 = Video(
+        title="Plan of Goddess",
+        artist="Silver Link Studio Palette",
+        aws_url="http://otakuxpress.s3.amazonaws.com/b2ee8b59fcda441d818ee22a0333e5a6.mp4",
+        uploader = seeded_users[1],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/571653b3ee4f4da689aab4f1c5291b12.jpg",
+        about_video = "Lugh saves Tarte from wolves, takes her home, gains father's permission to train her as assassin.",
+        genre = "Isekai"
+    )
+    video27 = Video(
+        title="Qualifications of Assassins",
+        artist="Silver Link Studio Palette",
+        aws_url="http://otakuxpress.s3.amazonaws.com/0d37a57a9ceb4dbdac90b10d5276188e.mp4",
+        uploader = seeded_users[1],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/5bef85e680394979b569430455faed87.jpg",
+        about_video = " Lugh proves Tarte's innocence, joins Cian in assassinations. Assumes Balor identity. Defeats Ronah, gifts sword. Lugh and Tarte head to Balor region.",
+        genre = "Isekai"
+    )
+    video28 = Video(
+        title="Residence of Girls",
+        artist="Silver Link Studio Palette",
+        aws_url="http://otakuxpress.s3.amazonaws.com/c8c30b724244430bb861afd6aa8bca18.mp4",
+        uploader = seeded_users[1],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/a454412d717943829db82be8b0a86f0a.jpg",
+        about_video = "Maha and friends captured by bandits, forced into prostitution. Lugh saves Maha, exposes noble's crimes. Prostitution ring shut down, Noine's scars healed. Maha finds new home with Lugh.",
+        genre = "Isekai"
+    )
+    video29 = Video(
+        title="Life of Falsehoods",
+        artist="Silver Link Studio Palette",
+        aws_url="http://otakuxpress.s3.amazonaws.com/46fee7d5fc9e401391b67c9e136513e2.mp4",
+        uploader = seeded_users[1],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/f33325093fed417a8fa2d7cd20d343a6.jpg",
+        about_video = "Lugh opens cosmetics shop, Orna, boosting Balor profits. Spies infiltrate, but one captured with no useful info. Lugh seeks magical knowledge from Dia. Surprised by unexpected feelings for Maha and Tarte.",
+        genre = "Isekai"
+    )
+    video30 = Video(
+        title="Rite of Choices",
+        artist="Silver Link Studio Palette",
+        aws_url="http://otakuxpress.s3.amazonaws.com/47badbd607bf43978a15eac2e0ff5d28.mp4",
+        uploader = seeded_users[1],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/e82fc5dc8a464603ae8c6e9e6212700f.jpg",
+        about_video = "Lugh entrusts Maha with Orna, returns home for assassin training. Attacked by wolves, suspects Hero's arrival. Cian offers peaceful merchant life, Lugh chooses assassin path for Dia's love. Cian assigns first target.",
+        genre = "Isekai"
+    )
+    video31 = Video(
+        title="Compensation of Assassination",
+        artist="Silver Link Studio Palette",
+        aws_url="http://otakuxpress.s3.amazonaws.com/384457ae2d49497fa0f7dd6db33f0576.mp4",
+        uploader = seeded_users[1],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/23cf5936f96f4666b760c123afc2bcf7.jpg",
+        about_video = "Lugh targets Count Venkaur, uncovers vizein criminals. Orna's success at mansion. Silently snipes count, sees grieving wife. First mission as free man, holds its significance.",
+        genre = "Isekai"
+    )
+    video32 = Video(
+        title="First of Dates",
+        artist="Silver Link Studio Palette",
+        aws_url="http://otakuxpress.s3.amazonaws.com/bca3ec34b5b24ddc8a24b8267d3754c0.mp4",
+        uploader = seeded_users[1],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/95589d07a8c74e3bb0ffee845c7d21a0.jpg",
+        about_video = " Lugh and Tarte train on island, learn of Gae Bolg. Viekone at war, Lugh offers Dia escape, she fortifies hometown. Lugh and Dia share date. Wounded soldier requests assassination of Dia.",
+        genre = "Isekai"
+    )
+    video33 = Video(
+        title="Choice of Betrayal",
+        artist="Silver Link Studio Palette",
+        aws_url="http://otakuxpress.s3.amazonaws.com/e6745f3177ad4ab7a7b746b156ea6b2b.mp4",
+        uploader = seeded_users[1],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/62fe345a425f445eb46ec31abdcd75bb.jpg",
+        about_video = "Cian reveals Dia's father's order to assassinate her to halt the war. Lugh sees opportunity to save Dia. Tarte aids Lugh's journey. Viekone mansion besieged, Lugh minimizes casualties. Maha shares divine treasure info with Lugh.",
+        genre = "Isekai"
+    )
+    video34 = Video(
+        title="Battle of Assassin",
+        artist="Silver Link Studio Palette",
+        aws_url="http://otakuxpress.s3.amazonaws.com/e8f8d75f8e454feeade9d9f423c9bad1.mp4",
+        uploader = seeded_users[1],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/1f81a7e4003040e58c29f492391535f6.jpg",
+        about_video = "Lugh disguises Dia as his sister and eliminates Setanta using a clever plan. The Tuatha Dé family adopts Dia. Lugh learns of Hero Epona's arrival in Alvan Kingdom.",
+        genre = "Isekai"
+    )
 
-
-    all_videos = [video1, video2, video3, video4, video5, video6, video7, video8, video9, video10, video11, video12, video13, video14, video15, video16, video17, video18, video19, video20, video21, video22]
+    all_videos = [video1, video2, video3, video4, video5, video6, video7, video8, video9, video10, video11, video12, video13, video14, video15, video16, video17, video18, video19, video20, video21, video22, video23, video24, video25, video26, video27, video28, video29, video30, video31, video32, video33, video34]
     add_videos = [db.session.add(video) for video in all_videos]
     db.session.commit()
 

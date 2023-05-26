@@ -52,7 +52,6 @@ export const likeVideoThunk = (videoId, userId) => async (dispatch) => {
     })
     if (response.ok) {
         const data = await response.json()
-        // dispatch(getSoloVideoThunk())
         return response
     } else {
         return {"message": "like video not working"}

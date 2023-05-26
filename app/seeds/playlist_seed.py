@@ -13,9 +13,9 @@ def seed_playlist(seeded_users, seeded_videos):
     )
     Playlist2 = Playlist(
         user = seeded_users[1],
-        name="Bleach",
-        playlist_image="",
-        playlist_videos = sample(seeded_videos, randint(0, len(seeded_videos)//2))
+        name="The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat",
+        playlist_image="http://otakuxpress.s3.amazonaws.com/b6cb9e1d699845b0915b9ab55c750d33.jpg",
+        playlist_videos = [seeded_videos[22],seeded_videos[23],seeded_videos[24],seeded_videos[25],seeded_videos[26],seeded_videos[27],seeded_videos[28],seeded_videos[29],seeded_videos[30],seeded_videos[31],seeded_videos[32],seeded_videos[33],]
     )
     Playlist3 = Playlist(
         user = seeded_users[2],

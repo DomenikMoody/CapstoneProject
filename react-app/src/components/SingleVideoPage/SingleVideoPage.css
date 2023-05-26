@@ -1,137 +1,255 @@
-.singleVideoPageContainer{
+.singleVideoPageContainer {
+    display: flex;
+    justify-content: space-between;
     margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 20px;
+    gap: 20px;
 }
-.videoInfo{
+
+.videoInfo {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 100%;
 }
-.videoArtist{
+
+.videoArtist {
     font-size: 14px;
 }
-.videoBioTitle{
+
+.videoBioTitle {
     margin-top: 10px;
 }
-.videoBio{
+
+.videoBio {
     font-size: 14px;
 }
-.videoTitlesingle{
+
+.videoTitlesingle {
     font-size: 30px;
     color: #DE9E48;
 }
-.studioAndplaylist{
+
+.studioAndplaylist {
     display: flex;
     justify-content: space-between;
 }
-.AddVideotoPlaylistModal >*{
+
+.AddVideotoPlaylistModal>* {
     background-color: #1a1918;
     color: #DE9E48;
     border: none;
 }
-.AddVideotoPlaylistModal >*:hover{
-    background-color:  #DE9E48;
-    color:#1a1918;
+
+.AddVideotoPlaylistModal>*:hover {
+    background-color: #DE9E48;
+    color: #1a1918;
 }
-.CommentsTitle{
+
+.CommentsTitle {
     color: #DE9E48;
 }
-#commentArea{
+
+#commentArea {
     width: 100%;
     border-top: none;
     border-left: none;
     border-right: none;
     background-color: #1a1918;
-    color:white;
-    outline:none;
+    color: white;
+    outline: none;
     font-size: 18px;
 }
+
 .green {
     color: green;
-  }
+}
 
-  .yellow {
+.yellow {
     color: yellow;
-  }
+}
 
-  .orange {
+.orange {
     color: orange;
-  }
+}
 
-  .red {
+.red {
     color: red;
-  }
-.characterCounter{
+}
+
+.characterCounter {
     display: flex;
     justify-content: space-between;
     width: 100%;
 }
-.commentButton{
+
+.commentButton {
     background-color: #1a1918;
-    color:#DE9E48;
+    color: #DE9E48;
     border: none;
 }
-.commentButton:hover{
-    background-color:#DE9E48;
+
+.commentButton:hover {
+    background-color: #DE9E48;
     color: #1a1918;
 }
-.commentOwner{
+
+.commentOwner {
     font-size: 10px;
 }
-.CommentContainer{
+
+.CommentContainer {
     display: flex;
     margin-top: 50px;
     gap: 10px
 }
-.userPicforComment{
+
+.userPicforComment {
     width: 40px;
     height: 40px;
 }
-.boxForcommentInput{
+
+.boxForcommentInput {
     display: flex;
-    width: 70%;
+    width: 100%;
 }
-.userNamepicforCommentimage{
+
+.userNamepicforCommentimage {
     height: 60px;
     width: 60px;
 }
-.createCommentForm{
+
+.createCommentForm {
     width: 100%;
 }
-.DeleteCommentModalBtn >*{
+
+.DeleteCommentModalBtn>* {
     background-color: #1a1918;
     color: #DE9E48;
     border: none;
 }
-.CommentNotLoginBtn{
+
+.CommentNotLoginBtn {
     display: flex;
-    gap: 20px
-    ;
+    gap: 20px;
 }
-.loginComment >*{
+
+.loginComment>* {
     background-color: #1a1918;
     color: #DE9E48;
     border: none;
 }
-.loginComment >*:hover{
+
+.loginComment>*:hover {
     background-color: #DE9E48;
     color: black;
 }
-.btnsforDeleteAndEdit{
+
+.btnsforDeleteAndEdit {
     display: flex;
     gap: 20px;
 }
-.ownerandTime{
+
+.ownerandTime {
     display: flex;
     gap: 20px;
 }
-.actualcomment{
+
+.actualcomment {
     margin-top: 12px;
 }
-.undervideotext{
+
+.undervideotext {
     display: flex;
     justify-content: space-between;
 }
-.likeStuff{
+
+.likeStuff {
     display: flex;
     gap: 10px;
+}
+
+.singleVideoPageFlex {
+    width: 70%;
+}
+
+.forthefull {
+    width: 100%;
+}
+
+.PlaylistorVideoSidebar {
+    width: 30%;
+    height: 100%;
+
+}
+
+.PlaylistorVideoSidebartabs {
+    display: flex;
+}
+
+.PlaylistorVideoSidebartabs button {
+    background-color: transparent;
+    border: none;
+    color: #DE9E48;
+    font-size: 16px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.PlaylistorVideoSidebartabs button.active {
+    background-color: #DE9E48;
+    color: #1a1918;
+}
+
+.PlaylistorVideoSidebarContent {
+    border: 2px solid #DE9E48;
+    background-color: #1a1918;
+    color: #DE9E48;
+}
+
+.sidebarplaylistContainer {
+    display: flex;
+    padding: 20px;
+}
+.sidebarplaylistContainer:hover {
+    display: flex;
+    padding: 20px;
+    background-color: #DE9E48;
+}
+.sidebarplaylistImgContainer {
+    width: 30%;
+    height: 68.41px;
+    object-fit: cover;
+}
+.sidebarplaylistImg{
+    width: 100%;
+    height: 68.41px;
+    object-fit: cover;
+}
+.navlink {
+    text-decoration: none;
+    color: white
+}
+
+.sidebarplaylistName {
+    color: #DE9E48;
+}
+
+.sidebarplaylistNOV {
+    font-size: 12px;
+}
+
+.sidebarplaylistcreator {
+    font-size: 12px;
+}
+.playlistsidebarInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.sidebarplaylistContainer:hover .sidebarplaylistName,
+.sidebarplaylistContainer:hover .sidebarplaylistNOV,
+.sidebarplaylistContainer:hover .sidebarplaylistcreator {
+  color: black;
 }

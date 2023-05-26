@@ -11,11 +11,12 @@
 .playlistCardContainer {
     display: flex;
     flex-direction: column;
+    max-width: 350px;
 }
 
 #playlistName {
     margin: 2px;
-    color: black;
+    color: white;
 }
 
 #playlistuserName {
