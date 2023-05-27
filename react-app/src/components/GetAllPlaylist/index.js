@@ -23,7 +23,7 @@ function GetAllPlaylist() {
                 <div key={playlist.id} className="playlistCardContainer" onClick={(e) => history.push(`/playlist/${playlist.id}`)}>
                     <img className="playlistImg" src={playlist.playlistImage} />
                     <div className="playlistCardText">
-                        <p id="playlistName">{playlist.name}</p>
+                        <p id="playlistName1">{playlist.name}</p>
                         <p id="playlistuserName">Playlist by: {playlist.creator}</p>
                     </div>
                 </div>

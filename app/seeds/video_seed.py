@@ -343,8 +343,128 @@ def seed_videos(seeded_users):
         about_video = "Lugh disguises Dia as his sister and eliminates Setanta using a clever plan. The Tuatha Dé family adopts Dia. Lugh learns of Hero Epona's arrival in Alvan Kingdom.",
         genre = "Isekai"
     )
+    video35 = Video(
+        title="Tragedy",
+        artist="Viz Media",
+        aws_url="http://otakuxpress.s3.amazonaws.com/dd90ae7f27ef404fb739603a17309e7f.mp4",
+        uploader= seeded_users[2],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/6b3dbd71e10748cd9ab00221df91025c.jpg",
+        about_video ="An ordinary college student named Kaneki meets a girl who also loves to read and his fate changes when she reveals herself as a ghoul who craves human flesh -- and intends to eat him alive.",
+        genre = "Dark Fantasy"
+    )
+    video36 = Video(
+        title="Incubation",
+        artist="Viz Media",
+        aws_url="http://otakuxpress.s3.amazonaws.com/e40a7650295344368114989d4ae83496.mp4",
+        uploader= seeded_users[2],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/7b8824dc8d7e4c29a5320c11358b5a0b.jpg",
+        about_video ="Kaneki struggles to adjust to his new life and his changed body. When Nishiki Nishio preys on his friend Hideyoshi Nagachika, Kaneki fights to protect him, but worries about his condition.",
+        genre = "Dark Fantasy"
+    )
+    video37 = Video(
+        title="Dove",
+        artist="Viz Media",
+        aws_url="http://otakuxpress.s3.amazonaws.com/3abbb524254246b680da3a9dd8d41298.mp4",
+        uploader= seeded_users[2],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/5c09388bea3d476aa4003d4c9ece71b7.jpg",
+        about_video ="After rescuing his friend, Kaneki is taken in by Yoshimura and Touka Kirishima. Yoshimura helps Kaneki learn how to blend in with humans.",
+        genre = "Dark Fantasy"
+    )
+    video38 = Video(
+        title="Supper",
+        artist="Viz Media",
+        aws_url="http://otakuxpress.s3.amazonaws.com/d7bbe71a854343959197bd09d49ff4a6.mp4",
+        uploader= seeded_users[2],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/f261d0510e624f51ba7aba0160eca84b.jpg",
+        about_video ="Kaneki makes friends with Tsukiyama, a ghoul acquaintance of Rize who enjoys reading and possesses other, more epicurean tastes.",
+        genre = "Dark Fantasy"
+    )
+    video39 = Video(
+        title="Scars",
+        artist="Viz Media",
+        aws_url="http://otakuxpress.s3.amazonaws.com/fa6245278c994bcaa4b31b2f73cd37fb.mp4",
+        uploader= seeded_users[2],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/4fd14ef8c56c4318adf1eeb70d4e9742.jpg",
+        about_video ="After Touka falls ill, Kaneki pays her a visit that has some unexpected consequences. Tsukiyama prepares another trap for Kaneki.",
+        genre = "Dark Fantasy"
+    )
+    video40 = Video(
+        title="Cloudburst",
+        artist="Viz Media",
+        aws_url="http://otakuxpress.s3.amazonaws.com/77f931a0df8449e984b0d7206220c6cd.mp4",
+        uploader= seeded_users[2],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/38af29cfa53d4e2780fae6486d995c0b.jpg",
+        about_video ="Now that Kimi knows Nishiki and Kaneki are ghouls, Touka wants to kill Kimi. Hinami is upset when she cannot see her father.",
+        genre = "Dark Fantasy"
+    )
+    video41 = Video(
+        title="Captivity",
+        artist="Viz Media",
+        aws_url="http://otakuxpress.s3.amazonaws.com/69310922d215434da974f5ab0364f6b2.mp4",
+        uploader= seeded_users[2],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/e22b1ca9d61348a88432a74c6d424c03.jpg",
+        about_video ="ouka decides to take matters with the ghoul investigation into her own hands. Equally fed up, Kaneki decides to get involved.",
+        genre = "Dark Fantasy"
+    )
+    video42 = Video(
+        title="Circular",
+        artist="Viz Media",
+        aws_url="http://otakuxpress.s3.amazonaws.com/64055292b78f4e5bab3609ba4955e761.mp4",
+        uploader= seeded_users[2],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/b8d65d93d14841679413925e25d61f0e.jpg",
+        about_video ="Touka and Kaneki look for a runaway Hinami, who has escaped Anteiku, and they come face-to-face with Amon and Mado.",
+        genre = "Dark Fantasy"
+    )
+    video43 = Video(
+        title="Birdcage",
+        artist="Viz Media",
+        aws_url="http://otakuxpress.s3.amazonaws.com/750924a9d438420ba99da63ade63ab4a.mp4",
+        uploader= seeded_users[2],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/85d42a818cae41b3b891097328f09403.jpg",
+        about_video ="After the battle with Mado, Hinami moves in with Touka and Kaneki and tries to return to normal. Kaneki looks for information about Rize.",
+        genre = "Dark Fantasy"
+    )
+    video44 = Video(
+        title="Aogiri",
+        artist="Viz Media",
+        aws_url="http://otakuxpress.s3.amazonaws.com/f04f98103c724eafa49077606e8cd29e.mp4",
+        uploader= seeded_users[2],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/73705cb3ed6f49a0a6c30fcd4ea691c4.jpg",
+        about_video ="Kaneki is captured by an underground ghoul faction, Aogiri Tree, bent on taking over. Amon is introduced to his eccentric new partner.",
+        genre = "Dark Fantasy"
+    )
+    video45 = Video(
+        title="High Spirts",
+        artist="Viz Media",
+        aws_url="http://otakuxpress.s3.amazonaws.com/71bb31f8fd7f4cda8b1ead7891014dfb.mp4",
+        uploader= seeded_users[2],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/c04b47bf0d074410bc21189372460121.jpg",
+        about_video ="The police and CCG move to attack Aogiri Tree in its shopping mall headquarters, while Kaneki is tortured by Yamori.",
+        genre = "Dark Fantasy"
+    )
+    video46 = Video(
+        title="Ghoul",
+        artist="Viz Media",
+        aws_url="http://otakuxpress.s3.amazonaws.com/49f9a463f4f14d56aeaf316aa6195916.mp4",
+        uploader= seeded_users[2],
+        video_likes = sample(seeded_users, randint(0, len(seeded_users))),
+        video_image = "http://otakuxpress.s3.amazonaws.com/1e69a4e128334bc0b50759507a99f717.jpg",
+        about_video ="While being tortured by Yamori, Kaneki passes through several illusions and a manifestation of Rize forces him to make a choice with profound consequences.",
+        genre = "Dark Fantasy"
+    )
 
-    all_videos = [video1, video2, video3, video4, video5, video6, video7, video8, video9, video10, video11, video12, video13, video14, video15, video16, video17, video18, video19, video20, video21, video22, video23, video24, video25, video26, video27, video28, video29, video30, video31, video32, video33, video34]
+    all_videos = [video1, video2, video3, video4, video5, video6, video7, video8, video9, video10, video11, video12, video13, video14, video15, video16, video17, video18, video19, video20, video21, video22, video23, video24, video25, video26, video27, video28, video29, video30, video31, video32, video33, video34, video35, video36, video37, video38, video39, video40, video41, video42, video43, video44, video45, video46]
     add_videos = [db.session.add(video) for video in all_videos]
     db.session.commit()
 

@@ -7,7 +7,9 @@ import "./GetAllVideos.css"
 function GetAllVideos() {
     const allVideos = useSelector(state => state.video)
     const dispatch = useDispatch()
-    const allVideoArray = Object.values(allVideos)
+    const allVideoArray1 = Object.values(allVideos)
+    const allVideoArray = allVideoArray1.sort((a, b) => Math.random() - Math.random())
+
 
 
     useEffect(() => {

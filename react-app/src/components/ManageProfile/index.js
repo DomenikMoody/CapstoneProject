@@ -114,9 +114,11 @@ function ManageProfile() {
                 <div className='playlistthumbnail'>
                   <img className='playlistthumbnailimage' src={playlist.playlistImage} alt="Playlist Thumbnail" />
                 </div>
-                <div>
-                  {playlist.name}
-                </div>
+                <div className="sidebarplaylistName">
+                    {playlist.name.length > 11
+                      ? playlist.name.substring(0, 11) + "..."
+                      : playlist.name}
+                  </div>
                 <div className='PlaylistBtns'>
                   <div className='DeletePlaylistbtn'>
                     <OpenModalButton

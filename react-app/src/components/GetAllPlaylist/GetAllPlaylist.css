@@ -14,9 +14,9 @@
     max-width: 350px;
 }
 
-#playlistName {
+#playlistName1 {
     margin: 2px;
-    color: white;
+    color: #DE9E48;
 }
 
 #playlistuserName {
@@ -34,6 +34,6 @@
     flex-direction: column;
     background-color: #DE9E48;
 }
-.playlistCardContainer:hover #playlistName {
+.playlistCardContainer:hover #playlistName1 {
     color: #000000;
 }

@@ -31,11 +31,9 @@ function SingleVideoPage() {
   const maxCharacters = 250
   const sidebarPlaylist = useSelector(state => state.sidebar.allPlaylists)
   const sidebarVideos = useSelector(state => state.sidebar.videos)
-  const sidebarPlaylistArray1 = Object.values(sidebarPlaylist)
-  const sidebarPlaylistArray = sidebarPlaylistArray1.sort((a, b) => Math.random() - Math.random())
-  const sidebarVideosArray1 = Object.values(sidebarVideos)
-  const sidebarVideosArray = sidebarVideosArray1.sort((a, b) => Math.random() - Math.random())
-  console.log("HERE IS THE VIDEO ARRAY RANDOMIZED", sidebarVideosArray)
+  const sidebarPlaylistArray = Object.values(sidebarPlaylist)
+  const sidebarVideosArray = Object.values(sidebarVideos)
+
 
   const handleCommentChange = (e) => {
     const inputComments = e.target.value;

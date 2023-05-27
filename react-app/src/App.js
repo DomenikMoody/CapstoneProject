@@ -12,6 +12,7 @@ import GetAllPlaylist from "./components/GetAllPlaylist";
 import GetSinglePlaylist from "./components/GetSinglePlaylist";
 import PlaylistForm from "./components/CreatePlaylistForm";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
+import SearchResults from "./components/SearchResults";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +30,9 @@ function App() {
             <ProtectedRoute>
               <ManageProfile />
             </ProtectedRoute>
+          </Route>
+          <Route exact path = "/search/:search">
+            <SearchResults />
           </Route>
           <Route exact path="/" >
             <GetAllVideos />

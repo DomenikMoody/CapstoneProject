@@ -74,7 +74,6 @@
   color: black;
 }
 
-/* Add the following styles for ProfileButton */
 .profile-dropdown {
   position: absolute;
   right: 100px;
@@ -89,6 +88,7 @@
   align-items: center;
   gap: 10px;
 }
+
 .authenicationButton {
   margin-top: 10px;
   background-color: #DE9E48;
@@ -104,23 +104,62 @@
 .hidden {
   display: none;
 }
-.LogoutBtn{
+
+.LogoutBtn {
   background-color: #DE9E48;
   border: none;
-  color:black
+  color: black;
 }
-.LogoutBtn:hover{
+
+.LogoutBtn:hover {
   background-color: black;
   border: none;
-  color:#DE9E48
+  color: #DE9E48;
 }
-.AuthButtons button{
+
+.AuthButtons button {
   background-color: #DE9E48;
   border: none;
-  color:black
+  color: black;
 }
-.AuthButtons button:hover{
+
+.AuthButtons button:hover {
   background-color: black;
   border: none;
-  color:#DE9E48
+  color: #DE9E48;
+}
+
+.SearchInput {
+  width: 400px;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  padding: 8px 16px;
+  outline: none;
+}
+
+.SearchButton {
+  border: none;
+  background-color: white;
+  border-radius: 0 20px 20px 0;
+  padding: 8px;
+}
+
+.SearchInputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.SearchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.searchContainer {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 150px;
 }

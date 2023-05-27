@@ -7,6 +7,7 @@
 .allvideosContainer{
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 50px;
 }
 #playlistImagesform{
     display: none;
@@ -32,4 +33,7 @@
 }
 .upload-button:hover{
     color:#DE9E48;
+}
+#playlistName{
+    color: black;
 }

@@ -19,9 +19,9 @@ def seed_playlist(seeded_users, seeded_videos):
     )
     Playlist3 = Playlist(
         user = seeded_users[2],
-        name="One Piece",
-        playlist_image="",
-        playlist_videos = sample(seeded_videos, randint(0, len(seeded_videos)//2))
+        name="Toyko Ghoul",
+        playlist_image="http://otakuxpress.s3.amazonaws.com/bd3672b3e2f545b78f7d92fa6e3120d1.jpg",
+        playlist_videos = [seeded_videos[34],seeded_videos[35],seeded_videos[36],seeded_videos[37],seeded_videos[38],seeded_videos[39],seeded_videos[40],seeded_videos[41],seeded_videos[42],seeded_videos[43],seeded_videos[44],seeded_videos[45],]
     )
 
     db.session.add(Playlist1)

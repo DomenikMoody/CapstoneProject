@@ -1,0 +1,21 @@
+.EntireSearchpage{
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+.SearchAnimeCard{
+    display: flex;
+}
+.SearchAnimeimage{
+    width:224px ;
+}
+.SearchAnimeTitle{
+    font-size: 20pt;
+    color: #DE9E48;
+}
+.SearchAnimeCard:hover{
+    background-color: #DE9E48;
+    color: black;
+}
+.SearchAnimeCard:hover .SearchAnimeCardInfo .SearchAnimeTitle{
+    color: black;
+  }
