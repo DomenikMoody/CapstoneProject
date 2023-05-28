@@ -89,5 +89,7 @@ Check out [Otakuxpress](https://otakuxpress.onrender.com/)
 Logged-in Users can
 * Upload multiple images of their spot to AWS S3
 
-
+## Future Features
+### User Profile Pages For Other Users to View 
+* USer can view a user profile page and view the playlist they created and videos they uploaded 
 
