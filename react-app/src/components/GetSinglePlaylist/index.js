@@ -41,7 +41,7 @@ function GetSinglePlaylist() {
               <th>Title</th>
               <th>Studio</th>
               <th colSpan={3}>Uploaded By</th>
-              {user.id === singlePlaylist?.userId && <th>Remove from Playlist</th>}
+              {user?.id === singlePlaylist?.userId && <th>Remove from Playlist</th>}
             </tr>
           </thead>
           <tbody>
@@ -54,7 +54,7 @@ function GetSinglePlaylist() {
                   <td>{video?.title}</td>
                   <td>{video?.artist}</td>
                   <td colSpan={3}>{video.uploader}</td>
-                  {user.id === singlePlaylist?.userId && <div className="removeFromplaylistbtn"><td className="toremovebuttoncss" onClick={(e)=>e.stopPropagation()}><OpenModalButton
+                  {user?.id === singlePlaylist?.userId && <div className="removeFromplaylistbtn"><td className="toremovebuttoncss" onClick={(e)=>e.stopPropagation()}><OpenModalButton
                         buttonText={<i class="fas fa-minus-circle"></i>}
                         onItemClick={closeModal}
                         modalComponent={<RemoveVideoFromPlaylist video={video} playlistId={ playlistID} />}
