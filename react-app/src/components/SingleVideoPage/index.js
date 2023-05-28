@@ -98,12 +98,14 @@ function SingleVideoPage() {
           <div className="videoInfo">
             <div className="undervideotext">
               <div className="videoTitlesingle">{pageVideo?.title}</div>
-              <div className="likeStuff">
-                <div>Likes: {pageVideo.likes.length}</div>
-                <div>
-                  <LikeForm video={pageVideo} />
+              {user && (
+                <div className="likeStuff">
+                  <div>Likes: {pageVideo?.likes.length}</div>
+                  <div>
+                    <LikeForm video={pageVideo} />
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
             <div className="studioAndplaylist">
               <div className="videoArtist">Made By: {pageVideo?.artist}</div>
