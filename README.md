@@ -87,7 +87,8 @@ Check out [Otakuxpress](https://otakuxpress.onrender.com/)
 
 ## AWS
 Logged-in Users can
-* Upload multiple images of their spot to AWS S3
+* Upload multiple ivideos to AWS S3 one at a time
+* Upload thumbnails to the playlist and video
 
 ## Future Features
 ### User Profile Pages For Other Users to View 
