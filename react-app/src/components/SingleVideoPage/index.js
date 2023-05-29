@@ -110,13 +110,15 @@ function SingleVideoPage() {
             <div className="studioAndplaylist">
               <div className="videoArtist">Made By: {pageVideo?.artist}</div>
               <div>
-                <div className="AddVideotoPlaylistModal">
-                  <OpenModalButton
-                    buttonText="Add to a playlist"
-                    onItemClick={closeModal}
-                    modalComponent={<AddVideotoPlaylist video={pageVideo} />}
-                  />
-                </div>
+                {user && (
+                  <div className="AddVideotoPlaylistModal">
+                    <OpenModalButton
+                      buttonText="Add to a playlist"
+                      onItemClick={closeModal}
+                      modalComponent={<AddVideotoPlaylist video={pageVideo} />}
+                    />
+                  </div>
+                )}
               </div>
             </div>
             <div className="videoBioTitle">Description</div>
@@ -127,7 +129,6 @@ function SingleVideoPage() {
           <div className="commentTitlediv">
             <h2 className="CommentsTitle">Comments</h2>
           </div>
-
           {user ? (
             <div className="boxForcommentInput">
               <div className="userNamepicforComment">
