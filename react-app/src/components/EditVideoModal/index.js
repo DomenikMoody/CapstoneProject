@@ -84,7 +84,11 @@ const EditVideoModal = (video) => {
         closeModal();
         history.push(`/manage/`);
     };
-
+    const handleCancel = async (e) => {
+        e.preventDefault()
+        await dispatch(getAllVideosThunk())
+        closeModal()
+    }
 
     if (!video) return null
 
@@ -120,7 +124,7 @@ const EditVideoModal = (video) => {
                         <button className="Updatebutton" type="submit">Update Video</button>
                     </div>
                     <div>
-                        <button className="CancelUpdateButton" onClick={() => closeModal()}>Cancel</button>
+                        <button className="CancelUpdateButton" onClick={handleCancel}>Cancel</button>
                     </div>
                 </div>
 

@@ -108,17 +108,17 @@ function ManageProfile() {
       <div>
         <h2 className='TitletoPage'>HERE ARE ALL THE PLAYLISTS YOU CREATED</h2>
         <div className='playlistCard'>
-          {userPlaylist.length > 0 &&
+          {userPlaylist.length > 0 ? (
             userPlaylist.map(playlist => (
               <div key={playlist.id}>
                 <div className='playlistthumbnail'>
                   <img className='playlistthumbnailimage' src={playlist.playlistImage} alt="Playlist Thumbnail" />
                 </div>
                 <div className="sidebarplaylistName">
-                    {playlist.name.length > 11
-                      ? playlist.name.substring(0, 11) + "..."
-                      : playlist.name}
-                  </div>
+                  {playlist.name.length > 11
+                    ? playlist.name.substring(0, 11) + "..."
+                    : playlist.name}
+                </div>
                 <div className='PlaylistBtns'>
                   <div className='DeletePlaylistbtn'>
                     <OpenModalButton
@@ -134,7 +134,12 @@ function ManageProfile() {
                   </div>
                 </div>
               </div>
-            ))}
+            ))
+          ) : (
+            <div className="noPlaylistsMessage">
+              You haven't uploaded any playlists yet...
+            </div>
+          )}
         </div>
       </div>
     </div>
