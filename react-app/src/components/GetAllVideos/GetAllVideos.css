@@ -9,10 +9,21 @@
     text-decoration: none;
   }
 
-  .videoCardContainer a:hover {
+  .videoCardContainer a:hover{
     text-decoration: none;
+    background-color: #DE9E48;
+    color: black;
   }
-
+  .videoCardContainer a:hover .videoTitle {
+    text-decoration: none;
+    background-color: #DE9E48;
+    color: black;
+  }
+  .videoCardContainer a:hover .videoStudio{
+    text-decoration: none;
+    background-color: #DE9E48;
+    color: black;
+  }
 
   .VideoCard {
     width: 350px;
