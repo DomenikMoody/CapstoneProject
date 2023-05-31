@@ -115,7 +115,7 @@ const UserProileModal = () => {
             onChange={handleBioChange}
           />
           <div className="bio-counter">
-            {bio.length}/{maxBioLength}
+            {bio?.length}/{maxBioLength}
           </div>
         </label>
         <div className="profilePictureupload">

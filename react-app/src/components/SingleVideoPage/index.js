@@ -11,7 +11,7 @@ import { createCommentsThunk } from "../../store/comments";
 import DeleteCommentModal from "../DeleteCommentModal/index,";
 import EditCommentModal from "../EditCommentModal";
 import LoginFormModal from "../LoginFormModal";
-import SignupFormModal from "../SignupFormModal"
+import SignupFormModal from "../SignupFormModal";
 import LikeForm from "./likeform";
 import { getAllPlaylistforSidebarThunk } from "../../store/sidebar";
 import { getAllVideosforSidebarThunk } from "../../store/sidebar";
@@ -33,7 +33,7 @@ function SingleVideoPage() {
   const sidebarVideos = useSelector(state => state.sidebar.videos)
   const sidebarPlaylistArray = Object.values(sidebarPlaylist)
   const sidebarVideosArray = Object.values(sidebarVideos)
-
+  const [showCommentError, setShowCommentError] = useState(false);
 
   const handleCommentChange = (e) => {
     const inputComments = e.target.value;
@@ -58,6 +58,11 @@ function SingleVideoPage() {
 
   const handleCommentSubmit = async (e) => {
     e.preventDefault()
+    if (comments.trim() === "") {
+      setShowCommentError(true);
+      return;
+    }
+
     const formData = new FormData()
 
     formData.append('user_id', user.id)
@@ -67,6 +72,7 @@ function SingleVideoPage() {
     await dispatch(createCommentsThunk(formData))
     await dispatch(getAllCommentsThunk())
     setComments("")
+    setShowCommentError(false);
   }
 
   const handleVideoTab = async () => {
@@ -74,7 +80,7 @@ function SingleVideoPage() {
     setActiveTab('videos');
   };
 
-  const handleplaylistTab = async () => {
+  const handlePlaylistTab = async () => {
     await dispatch(getAllPlaylistforSidebarThunk())
     setActiveTab('playlist');
   };
@@ -132,7 +138,7 @@ function SingleVideoPage() {
           {user ? (
             <div className="boxForcommentInput">
               <div className="userNamepicforComment">
-                <img className="userNamepicforCommentimage" src={user?.profileImage.length === 0 ? "https://static1.squarespace.com/static/5898e29c725e25e7132d5a5a/58aa11bc9656ca13c4524c68/58aa11e99656ca13c45253e2/1487540713345/600x400-Image-Placeholder.jpg?format=original" : user?.profileImage} />
+                <img className="userNamepicforCommentimage" src={user?.profileImage.length === 0 ? "https://static1.squarespace.com/static/5898e29c725e25e7132d5a5a/58aa11bc9656ca13c4524c68/58aa11e99656ca13c45253e2/1487540713345/600x400-Image-Placeholder.jpg?format=original" : user?.profileImage} alt="User Profile" />
               </div>
               <form className='createCommentForm' onSubmit={handleCommentSubmit}>
                 <div className="forthefull">
@@ -157,6 +163,11 @@ function SingleVideoPage() {
                     </div>
                   </div>
                 </div>
+                {showCommentError && (
+                  <div className="error">
+                    You need to type something to place a comment.
+                  </div>
+                )}
               </form>
             </div>
           ) : (
@@ -183,16 +194,16 @@ function SingleVideoPage() {
                   />
                 </div>
               </div>
-
             </div>
           )}
 
           {commentArray && commentArray
-            .filter(comment => comment.videoId === +videoId).toReversed()
+            .filter(comment => comment.videoId === +videoId)
+            .reverse()
             .map((comment, index) => (
-              <div className="CommentContainer">
+              <div className="CommentContainer" key={index}>
                 <div className="userPicforCommentcontainer">
-                  <img className="userPicforComment" src={comment?.userimage.length === 0 ? "https://static1.squarespace.com/static/5898e29c725e25e7132d5a5a/58aa11bc9656ca13c4524c68/58aa11e99656ca13c45253e2/1487540713345/600x400-Image-Placeholder.jpg?format=original" : comment?.userimage} />
+                  <img className="userPicforComment" src={comment?.userimage.length === 0 ? "https://static1.squarespace.com/static/5898e29c725e25e7132d5a5a/58aa11bc9656ca13c4524c68/58aa11e99656ca13c45253e2/1487540713345/600x400-Image-Placeholder.jpg?format=original" : comment?.userimage} alt="User Profile" />
                 </div>
                 <div className="NameAndComment">
                   <div className="ownerandTime">
@@ -231,15 +242,15 @@ function SingleVideoPage() {
       </div>
       <div className="PlaylistorVideoSidebar">
         <div className="PlaylistorVideoSidebartabs">
-          <button className={activeTab === 'playlist' ? 'active' : ''} onClick={handleplaylistTab}>Playlist</button>
+          <button className={activeTab === 'playlist' ? 'active' : ''} onClick={handlePlaylistTab}>Playlist</button>
           <button className={activeTab === 'videos' ? 'active' : ''} onClick={handleVideoTab}>Videos</button>
         </div>
         <div className="PlaylistorVideoSidebarContent">
           {activeTab === 'playlist' && <div>{sidebarPlaylistArray && sidebarPlaylistArray.map(playlist =>
-            <NavLink className="navlink" to={`/playlist/${playlist.id}`}>
+            <NavLink className="navlink" to={`/playlist/${playlist.id}`} key={playlist.id}>
               <div className="sidebarplaylistContainer">
                 <div className="sidebarplaylistImgContainer">
-                  <img className="sidebarplaylistImg" src={playlist.playlistImage}></img>
+                  <img className="sidebarplaylistImg" src={playlist.playlistImage} alt="Playlist" />
                 </div>
                 <div className="playlistsidebarInfo">
                   <div className="sidebarplaylistName">
@@ -255,26 +266,24 @@ function SingleVideoPage() {
                   </div>
                 </div>
               </div>
-
             </NavLink>
           )}</div>}
           {activeTab === 'videos' && <div>{sidebarVideosArray && sidebarVideosArray.map(video =>
-            <NavLink className="navlink" to={`/video/${video.id}`}>
-              <div className="sidebarplaylistContainer">
-                <div className="sidebarplaylistImgContainer">
-                  <img className="sidebarplaylistImg" src={video.videoImage}></img>
+            <NavLink className="navlink" to={`/video/${video.id}`} key={video.id}>
+              <div className="sidebarvideoContainer">
+                <div className="sidebarvideoImgContainer">
+                  <img className="sidebarvideoImg" src={video.awsUrl} alt="Video" />
                 </div>
-                <div className="playlistsidebarInfo">
-                  <div className="sidebarplaylistName">
-                    {video.title.length > 15
-                      ? video.title.substring(0, 15) + "..."
+                <div className="sidebarvideoInfo">
+                  <div className="sidebarvideoName">
+                    {video.title.length > 11
+                      ? video.title.substring(0, 11) + "..."
                       : video.title}
                   </div>
-                  <div className="sidebarplaylistNOV">
-                    Number of Likes:{video.likes.length}
-                  </div>
-                  <div className="sidebarplaylistcreator">
-                    Studio: {video.artist}
+                  <div className="sidebarvideoArtist">
+                    Made By: {video.artist.length > 11
+                      ? video.artist.substring(0, 11) + "..."
+                      : video.artist}
                   </div>
                 </div>
               </div>
