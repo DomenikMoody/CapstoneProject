@@ -5,7 +5,7 @@ content of Cruncyroll!
 Check out [Otakuxpress](https://otakuxpress.onrender.com/)
 
 ## Index
-[MVP Feature List](https://github.com/DomenikMoody/CapstoneProject/wiki/Features) | [Database Schema](https://github.com/DomenikMoody/CapstoneProject/wiki/Database-Schema) | [User Stories](https://github.com/DomenikMoody/CapstoneProject/wiki/User-Stories) | [Wire Frames](https://github.com/DomenikMoody/CapstoneProject/wiki/WireFrame) |
+[MVP Feature List](https://github.com/DomenikMoody/CapstoneProject/wiki/Features) | [Database Schema](https://github.com/DomenikMoody/CapstoneProject/wiki/Database-Schema) | [User Stories](https://github.com/DomenikMoody/CapstoneProject/wiki/User-Stories) | [Wire Frames](https://github.com/DomenikMoody/CapstoneProject/wiki/WireFrame) | [EndPoints](https://github.com/DomenikMoody/CapstoneProject/wiki/Endpoints)
 
 ***
 
