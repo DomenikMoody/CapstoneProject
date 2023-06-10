@@ -188,7 +188,7 @@ function SingleVideoPage() {
                 </div>
                 <div className="loginComment">
                   <OpenModalButton
-                    buttonText="Sign In"
+                    buttonText="Sign Up"
                     onItemClick={closeModal}
                     modalComponent={<SignupFormModal />}
                   />
@@ -271,8 +271,8 @@ function SingleVideoPage() {
           {activeTab === 'videos' && <div>{sidebarVideosArray && sidebarVideosArray.map(video =>
             <NavLink className="navlink" to={`/video/${video.id}`} key={video.id}>
               <div className="sidebarvideoContainer">
-                <div className="sidebarvideoImgContainer">
-                  <img className="sidebarvideoImg" src={video.awsUrl} alt="Video" />
+                <div className="Container">
+                  <img className="sidebarvideoImg" src={video.videoImage} alt="Video" />
                 </div>
                 <div className="sidebarvideoInfo">
                   <div className="sidebarvideoName">

@@ -30,10 +30,8 @@ export const editCommentThunk = (formData, commentId) => async dispatch => {
         body: formData
     })
     if (res.ok){
-        console.log("RES IS OK")
         return {"message": "comment updated"}
     } else {
-        console.log("RES IS NOT OK")
         return {"message" : "comment failed to update"}
     }
 }
@@ -63,7 +61,6 @@ const commentReducer = (state = initialState, action) => {
         }
         case DELETE_COMMENT: {
             const newState = {...state, allComments: {...state.comments}}
-            console.log(newState, "HERE IS THE NEW STATE")
             delete newState.allComments[action.commentId]
             return newState
         }

@@ -257,3 +257,18 @@
 .CommentsContainer{
 margin-bottom: 50px;
 }
+.sidebarvideoImg{
+    min-width: 250px;
+    height: 100%;
+    width: 100%;
+}
+.sidebarvideoContainer{
+    display: flex;
+    margin-bottom: 10px;
+}
+.sidebarvideoContainer:hover{
+    display: flex;
+    margin-bottom: 10px;
+    background-color: #DE9E48;
+    color: black;
+}

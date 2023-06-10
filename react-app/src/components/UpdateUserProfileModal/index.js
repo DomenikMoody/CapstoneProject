@@ -4,7 +4,7 @@ import { updateUserThunk } from "../../store/session";
 import { useModal } from "../../context/Modal";
 import "./UpdateUserModal.css";
 
-const UserProileModal = () => {
+const UserProfileModal = () => {
   const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -40,19 +40,19 @@ const UserProileModal = () => {
       alert("Sign Up for an account to unlock profile feature!");
       return;
     }
-    if (!username) {
+    if (!username.trim()) {
       setError("Username is required");
       return;
     }
-    if (firstName === null) {
+    if (!firstName.trim()) {
       setError("First name is required");
       return;
     }
-    if (lastName === null) {
+    if (!lastName.trim()) {
       setError("Last name is required");
       return;
     }
-    if (bio === null) {
+    if (!bio.trim()) {
       setError("Bio is required");
       return;
     }
@@ -144,4 +144,4 @@ const UserProileModal = () => {
   );
 };
 
-export default UserProileModal;
+export default UserProfileModal;

@@ -13,6 +13,7 @@ import GetSinglePlaylist from "./components/GetSinglePlaylist";
 import PlaylistForm from "./components/CreatePlaylistForm";
 import ProtectedRoute from "./components/auth/ProtectedRoute";
 import SearchResults from "./components/SearchResults";
+import ErrorPage from "./components/ErrorPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -56,6 +57,9 @@ function App() {
           </Route>
           <Route exact path="/playlist/:playlistid">
             <GetSinglePlaylist />
+          </Route>
+          <Route path="*">
+            <ErrorPage />
           </Route>
         </Switch>
       )}

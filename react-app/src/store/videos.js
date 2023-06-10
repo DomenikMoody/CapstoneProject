@@ -68,7 +68,6 @@ export const editVideoThunk = (video, id) => async (dispatch) => {
         await dispatch(getAllVideosThunk())
         return video
     } else {
-        console.log("RESPONSE IS NOT OK")
     }
 }
 export const removeVideoThunk = (videoId) => async (dispatch) => {
@@ -80,7 +79,6 @@ export const removeVideoThunk = (videoId) => async (dispatch) => {
     }
 }
 export const createVideoThunk = (video) => async (dispatch) => {
-    console.log("HERE IS THE VIDEO", video)
     const response = await fetch('/videos/new', {
         method: 'POST',
         body: video,

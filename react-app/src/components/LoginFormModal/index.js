@@ -17,14 +17,23 @@ function LoginFormModal() {
     if (data) {
       setErrors(data);
     } else {
-      closeModal()
+      closeModal();
     }
   };
+
   const handleOnClick = async () => {
-    setEmail("demo@aa.io")
-    setPassword("password")
+    setEmail("demo@aa.io");
+    setPassword("password");
     const data = await dispatch(login(email, password));
+  };
+
+  const renderError = () => {
+    if (errors.length > 0) {
+      return <li className="error">Invalid Credentials</li>;
     }
+    return null;
+  };
+
   return (
     <div className="LoginModalDiv">
       <div className="LoginModalTitle">
@@ -33,9 +42,7 @@ function LoginFormModal() {
       </div>
       <form onSubmit={handleSubmit}>
         <div>
-          {errors.map((error, idx) => (
-            <li className="error" key={idx}>{error}</li>
-          ))}
+          {renderError()}
         </div>
         <div>
           <label>
@@ -50,10 +57,8 @@ function LoginFormModal() {
                 required
               />
             </div>
-
           </label>
         </div>
-
         <label>
           <div className="passWordText">
             Password
@@ -66,15 +71,14 @@ function LoginFormModal() {
               required
             />
           </div>
-
         </label>
         <div className="DemoandLogin">
           <div>
-          <button className="loginbtnmodal" type="submit">Log In</button>
-        </div>
+            <button className="loginbtnmodal" type="submit">Log In</button>
+          </div>
         </div>
         <div className="DemoUserBtn">
-            <button className="demobtnModal" onClick={handleOnClick}>Demo User</button>
+          <button className="demobtnModal" onClick={handleOnClick}>Demo User</button>
         </div>
       </form>
     </div>

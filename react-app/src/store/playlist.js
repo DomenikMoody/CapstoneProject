@@ -74,7 +74,6 @@ export const getAllPlaylistThunk = () => async dispatch => {
     }
 }
 export const createPlaylistThunk = (formData) => async dispatch => {
-    console.log(formData, "HERE IS THE FORM DATA")
     const res = await fetch('/playlists/new', {
         method: 'POST',
         body: formData
@@ -88,7 +87,6 @@ export const createPlaylistThunk = (formData) => async dispatch => {
     }
 }
 export const updatePlaylistThunk = (formData, playlistId) => async dispatch => {
-    console.log(playlistId,"HERE IS THE PLAYLIST ID")
     const res = await fetch (`/playlists/${playlistId}`, {
         method: 'PUT',
         body: formData

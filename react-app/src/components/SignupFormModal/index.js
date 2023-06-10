@@ -25,6 +25,10 @@ function SignupFormModal() {
       setErrors(["Username is required"]);
       return;
     }
+    if (username.length < 3 || username.length > 20) {
+      setErrors(["Username must be between 3 and 20 characters long"]);
+      return;
+    }
     if (!password.trim()) {
       setErrors(["Password is required"]);
       return;

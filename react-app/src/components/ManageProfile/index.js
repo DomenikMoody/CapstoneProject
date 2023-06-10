@@ -10,7 +10,7 @@ import { getAllPlaylistThunk } from "../../store/playlist";
 import DeletePlaylist from '../DeletePlaylist';
 import UpdatePlaylist from '../UpdatePlaylistModal';
 import { NavLink } from 'react-router-dom';
-import UserProileModal from '../UpdateUserProfileModal';
+import UserProfileModal from '../UpdateUserProfileModal';
 
 function ManageProfile() {
   const user = useSelector(state => state.session.user);
@@ -44,7 +44,7 @@ function ManageProfile() {
               <div className='updateuseProfilebtn'>
                 <OpenModalButton
                   buttonText="Update User Profile"
-                  modalComponent={<UserProileModal />}
+                  modalComponent={<UserProfileModal />}
                 />
               </div>
             </div>

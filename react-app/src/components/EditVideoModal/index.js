@@ -13,7 +13,6 @@ const EditVideoModal = (video) => {
     const user = useSelector(state => state.session.user)
     const dispatch = useDispatch()
     const { closeModal } = useModal()
-    console.log(video, "HERE IS THE VIDEO")
 
     useEffect(() => {
         dispatch(getSoloVideoThunk(videoId))

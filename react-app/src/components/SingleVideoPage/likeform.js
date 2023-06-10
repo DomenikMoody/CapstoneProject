@@ -7,7 +7,6 @@ import { getSoloVideoThunk } from "../../store/videos"
 function LikeForm({video}){
     const dispatch = useDispatch()
     const user = useSelector(state => state.session)
-    console.log(user)
 
     const isVideoLiked = () => {
         for (let videoId of user.user.likes) {
