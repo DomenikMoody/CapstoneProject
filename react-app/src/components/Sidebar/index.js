@@ -84,7 +84,7 @@ function Sidebar({ isOpen, onClose }) {
           </div>
           <div>
             <div className='icons-bottom'>
-              <a className="GitHub" href="https://github.com/DomenikMoody" target="_blank"><i class="fab fa-github"></i></a>
+              <a className="GitHub" href="https://github.com/DomenikMoody/CapstoneProject" target="_blank"><i class="fab fa-github"></i></a>
               <a className="BsLinkedin" href="https://www.linkedin.com/in/domenik-moody-90370521b/" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
             <div>

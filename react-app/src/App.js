@@ -32,7 +32,7 @@ function App() {
               <ManageProfile />
             </ProtectedRoute>
           </Route>
-          <Route exact path = "/search/:search">
+          <Route exact path="/search/:search">
             <SearchResults />
           </Route>
           <Route exact path="/" >

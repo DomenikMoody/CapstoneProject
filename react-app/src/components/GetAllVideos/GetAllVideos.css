@@ -8,24 +8,8 @@
   .videoCardContainer a {
     text-decoration: none;
   }
-
-  .videoCardContainer a:hover{
-    text-decoration: none;
-    background-color: #DE9E48;
-    color: black;
-  }
-  .videoCardContainer a:hover .videoTitle {
-    text-decoration: none;
-    background-color: #DE9E48;
-    color: black;
-  }
-  .videoCardContainer a:hover .videoStudio{
-    text-decoration: none;
-    background-color: #DE9E48;
-    color: black;
-  }
-
   .VideoCard {
+    position: relative;
     width: 350px;
     margin: 10px;
   }
@@ -54,4 +38,109 @@
   .videoStudio {
     margin-top: 5px;
     font-size: 12px;
+  }
+  @media screen and (min-width: 1150px) and (max-width: 1519px) {
+    .AllvideosMaincss{
+      width: 30%;
+      margin: 10px;
+    }
+    .VideoCard{
+      width: 100%;
+    }
+    .VideoCard:hover{
+      background-color: #DE9E48;
+    }
+    .videoCardContainer a:hover .videoStudio{
+      text-decoration: none;
+      color: black;
+    }
+    .videoCardContainer a:hover .videoTitle {
+      text-decoration: none;
+      color: black;
+    }
+    .videoCardContainer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media screen and (min-width: 780px) and (max-width: 1149px) {
+    .AllvideosMaincss{
+      width: 40%;
+      margin: 10px;
+    }
+    .VideoCard{
+      width: 100%;
+    }
+    .VideoCard:hover{
+      background-color: #DE9E48;
+    }
+    .videoCardContainer a:hover .videoStudio{
+      text-decoration: none;
+      color: black;
+    }
+    .videoCardContainer a:hover .videoTitle {
+      text-decoration: none;
+      color: black;
+    }
+    .videoCardContainer{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media screen and (max-width: 779px) {
+    /* Styles for screens 779px and below */
+    .AllvideosMaincss {
+      width: 50%;
+      margin: 10px;
+    }
+
+    .VideoCard {
+      width: 100%;
+    }
+    .VideoCard:hover{
+      background-color: #DE9E48;
+    }
+    .videoCardContainer a:hover .videoStudio{
+      text-decoration: none;
+      color: black;
+    }
+    .videoCardContainer a:hover .videoTitle {
+      text-decoration: none;
+      color: black;
+    }
+
+    .videoCardContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media screen and (min-width: 1520px){
+    .AllvideosMaincss {
+      width: 20%;
+      margin: 10px;
+    }
+
+    .VideoCard {
+      width: 100%;
+    }
+    .VideoCard:hover{
+      background-color: #DE9E48;
+    }
+    .videoCardContainer a:hover .videoStudio{
+      text-decoration: none;
+      color: black;
+    }
+    .videoCardContainer a:hover .videoTitle {
+      text-decoration: none;
+      color: black;
+    }
+
+    .videoCardContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }

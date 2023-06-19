@@ -273,7 +273,6 @@ function SingleVideoPage() {
               <div className="sidebarvideoContainer">
                 <div className="Container">
                   <img className="sidebarvideoImg" src={video.videoImage} alt="Video" />
-                  {/*this is wild */}
                 </div>
                 <div className="sidebarvideoInfo">
                   <div className="sidebarvideoName">

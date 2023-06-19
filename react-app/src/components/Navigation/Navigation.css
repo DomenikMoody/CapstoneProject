@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #DE9E48;
+  background-color: #de9e48;
   padding: 10px;
   border-bottom: 3px solid black;
   z-index: 999;
@@ -63,11 +63,11 @@
 }
 
 .videoTitle {
-  color: #DE9E48;
+  color: #de9e48;
 }
 
 .videoStudio {
-  color: #DE9E48;
+  color: #de9e48;
 }
 
 .logoText {
@@ -91,12 +91,12 @@
 
 .authenicationButton {
   margin-top: 10px;
-  background-color: #DE9E48;
+  background-color: #de9e48;
 }
 
 .profileicon {
   margin-right: 20px;
-  background-color: #DE9E48;
+  background-color: #de9e48;
   border: none;
   font-size: 20px;
 }
@@ -106,7 +106,7 @@
 }
 
 .LogoutBtn {
-  background-color: #DE9E48;
+  background-color: #de9e48;
   border: none;
   color: black;
 }
@@ -114,11 +114,11 @@
 .LogoutBtn:hover {
   background-color: black;
   border: none;
-  color: #DE9E48;
+  color: #de9e48;
 }
 
 .AuthButtons button {
-  background-color: #DE9E48;
+  background-color: #de9e48;
   border: none;
   color: black;
 }
@@ -126,7 +126,7 @@
 .AuthButtons button:hover {
   background-color: black;
   border: none;
-  color: #DE9E48;
+  color: #de9e48;
 }
 
 .SearchInput {
@@ -156,10 +156,70 @@
   align-items: center;
   justify-content: center;
 }
+
 .searchContainer {
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 150px;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    justify-content: center;
+    padding: 10px;
+  }
+
+  .searchContainer {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+
+  .SearchInput {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar {
+    padding: 5px;
+  }
+
+  .LogoLink {
+    font-size: 14px;
+  }
+
+  .Logo {
+    height: 20px;
+  }
+
+  .logoText {
+    display: none;
+  }
+
+  .SearchInput {
+    width: 150px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+
+  .MenuButton {
+    font-size: 14px;
+    margin-right: 5px;
+  }
+
+  .profile-dropdown {
+    right: 20px;
+    font-size: 16px;
+  }
+
+  .authenicationButton {
+    font-size: 12px;
+  }
+
+  .profileicon {
+    margin-right: 10px;
+    font-size: 16px;
+  }
 }

@@ -7,10 +7,10 @@ import './Navigation.css';
 import { useModal } from '../../context/Modal';
 
 function Navigation({ isLoaded }) {
-  const sessionUser = useSelector(state => state.session.user);
+  const sessionUser = useSelector((state) => state.session.user);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const history = useHistory()
+  const history = useHistory();
   const { closeModal } = useModal();
 
   const handleSidebarToggle = () => {
@@ -22,19 +22,21 @@ function Navigation({ isLoaded }) {
   };
 
   const handleSearchbarSubmit = (e) => {
-    e.preventDefault()
-    setSearchQuery("")
-    history.push(`/search/${searchQuery}`)
+    e.preventDefault();
+    setSearchQuery('');
+    history.push(`/search/${searchQuery}`);
   };
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
   };
+
   const closeModalsAll = (e) => {
-    e.preventDefault()
-    closeModal()
-    history.push('/')
-  }
+    e.preventDefault();
+    closeModal();
+    history.push('/');
+  };
+
   const isSearchButtonDisabled = searchQuery === '';
 
   return (
@@ -44,10 +46,13 @@ function Navigation({ isLoaded }) {
           <i className="fas fa-bars"></i>
         </button>
         <NavLink exact to="/" className="LogoLink" onClick={closeModalsAll}>
-          <img className="Logo" src="http://otakuxpress.s3.amazonaws.com/c20bde2d7f2b45f99a0a736cc49d325d.png" alt="Logo" />
+          <img
+            className="Logo"
+            src="http://otakuxpress.s3.amazonaws.com/c20bde2d7f2b45f99a0a736cc49d325d.png"
+            alt="Logo"
+          />
           <span className="logoText">otakuxpress</span>
         </NavLink>
-
       </div>
       <div className="searchContainer">
         <form className="SearchForm" onSubmit={handleSearchbarSubmit}>
@@ -59,7 +64,11 @@ function Navigation({ isLoaded }) {
               onChange={handleSearchChange}
               className="SearchInput"
             />
-            <button type="submit" className="SearchButton" disabled={isSearchButtonDisabled}>
+            <button
+              type="submit"
+              className="SearchButton"
+              disabled={isSearchButtonDisabled}
+            >
               <i className="fas fa-search SearchIcon"></i>
             </button>
           </div>

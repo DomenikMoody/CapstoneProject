@@ -118,7 +118,7 @@ const PlaylistForm = () => {
                 <div className="allvideosContainer">
                     {allVideosArray.map(video =>
                         <div className="allvideos">
-                            <label>
+                            <label className="AllvideosMaincss">
                                 <div className='VideoCard'>
                                     <div className='videoThumbNail'>
                                         <img src={video?.videoImage}></img>
