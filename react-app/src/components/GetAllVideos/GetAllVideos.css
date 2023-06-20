@@ -14,22 +14,6 @@
     margin: 10px;
   }
 
-  .videoThumbNail {
-    height: 0;
-    padding-bottom: 56.25%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .videoThumbNail img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
   .videoTitle {
     margin-top: 10px;
     font-weight: bold;
@@ -39,10 +23,11 @@
     margin-top: 5px;
     font-size: 12px;
   }
-  @media screen and (min-width: 1150px) and (max-width: 1519px) {
-    .AllvideosMaincss{
+  @media screen and (min-width: 1150px){
+    .Tiles{
       width: 30%;
       margin: 10px;
+      gap: 20px;
     }
     .VideoCard{
       width: 100%;
@@ -64,10 +49,11 @@
       align-items: center;
     }
   }
-  @media screen and (min-width: 780px) and (max-width: 1149px) {
-    .AllvideosMaincss{
+  @media screen and (min-width: 886px) and (max-width: 1149px) {
+    .Tiles{
       width: 40%;
       margin: 10px;
+      gap: 15px;
     }
     .VideoCard{
       width: 100%;
@@ -89,11 +75,14 @@
       align-items: center;
     }
   }
-  @media screen and (max-width: 779px) {
+  @media screen and (max-width: 885px) {
     /* Styles for screens 779px and below */
-    .AllvideosMaincss {
-      width: 50%;
-      margin: 10px;
+    .Tiles{
+      width: 100%;
+      gap: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .VideoCard {
@@ -117,14 +106,15 @@
       align-items: center;
     }
   }
-  @media screen and (min-width: 1520px){
-    .AllvideosMaincss {
+  @media screen and (min-width: 1700px){
+    .Tiles{
       width: 20%;
       margin: 10px;
+      gap: 30px;
     }
 
     .VideoCard {
-      width: 100%;
+      width: 80%;
     }
     .VideoCard:hover{
       background-color: #DE9E48;

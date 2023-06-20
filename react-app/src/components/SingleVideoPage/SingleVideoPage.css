@@ -272,3 +272,23 @@ margin-bottom: 50px;
     background-color: #DE9E48;
     color: black;
 }
+
+@media screen and (min-width: 960px) and (max-width: 1372px) {
+    .sidebarvideoContainer{
+        display: flex;
+        flex-direction: column;
+    }
+  }
+@media screen  and (max-width: 959px) {
+    .singleVideoPageContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .sidebarvideoContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .PlaylistorVideoSidebarContent {
+        width: 258.3px; /* Set a specific width to override the shrinking effect */
+      }
+  }

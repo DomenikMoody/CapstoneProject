@@ -19,10 +19,10 @@ function GetAllVideos() {
     return (
         <div className='videoCardContainer'>
             {allVideoArray.length > 0 && allVideoArray.map(video =>
-                <NavLink  className="AllvideosMaincss" to={`/video/${video?.id}`}>
+                <NavLink  className="Tiles" to={`/video/${video?.id}`}>
                     <div className='VideoCard'>
                         <div className='videoThumbNail'>
-                            <img src={video?.videoImage}></img>
+                            <img className="videoThumbNailimgforsplash" src={video?.videoImage}></img>
                         </div>
                         <div className='videoTitle'>
                             {video?.title}
